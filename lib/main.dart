@@ -35,7 +35,7 @@ class EventAPP extends StatelessWidget {
       },
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home:LoginPage() ,
+        home:SplashScreen() ,
 theme: ThemeData(
   textTheme: GoogleFonts.abhayaLibreTextTheme(),
 ),
