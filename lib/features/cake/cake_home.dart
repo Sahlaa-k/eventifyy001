@@ -15,7 +15,7 @@ class _CakeHomePageState extends State<CakeHomePage> {
         slivers: [
           // SliverAppBar - a collapsible app bar
           SliverAppBar(
-              expandedHeight: 200.0, // The height when expanded
+                 expandedHeight: 200.0, // The height when expanded
               floating: true,
               pinned: true,
               flexibleSpace: FlexibleSpaceBar(

@@ -9,7 +9,7 @@ class ImageConstant{
   static const dance="assets/image/dance.webp";
   static const dance_singer="assets/image/dance4.jpg";
   static const marriage="assets/image/marriage.jpeg";
-  static const car="assets/image/car.jpeg";
+  static const car= "assets/image/car.jpeg";
   static const jewellery2="assets/image/wedding3.jpeg";
   static const photoGrapher1="assets/image/photography2.jpeg";
   static const photoGrapher2="assets/image/photography3.jpg";

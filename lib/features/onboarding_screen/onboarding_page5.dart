@@ -17,7 +17,7 @@ class _onBoarding5State extends State<onBoarding5> {
     return Scaffold(
       backgroundColor: ColorConstant.secondaryColor,
       body: SizedBox(
-        height: height*1,
+        height: height* 1,
         width: width*1,
         child: Padding(
           padding:  EdgeInsets.all(width*0.1),

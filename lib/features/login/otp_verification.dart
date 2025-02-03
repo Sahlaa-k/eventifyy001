@@ -23,7 +23,7 @@ class _OtpVerificationState extends State<OtpVerification> {
             children: [
               Container(
                 width: double.infinity,
-                height: height*.88,
+                height: height* 0.88,
                 decoration: const BoxDecoration(
                     borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(70),

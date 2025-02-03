@@ -18,7 +18,7 @@ class _SignupPageState extends State<SignupPage> {
       backgroundColor: ColorConstant.BackgroundColor,
       body: SingleChildScrollView(
         child: SizedBox(
-          width: width * 1.5,
+          width: width *  1.5,
           height: height * 1,
           child: Stack(
             children: [
