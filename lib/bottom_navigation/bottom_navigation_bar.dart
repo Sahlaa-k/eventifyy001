@@ -18,9 +18,9 @@ class BottomNavigationPage extends StatefulWidget {
 class _BottomNavigationPageState extends State<BottomNavigationPage> {
   int selectintex = 0;
   List pages = [
-    Container(),
+     Container(),
     //VendorsPage(),
-    BlogPage(),
+     BlogPage(),
     Container(),
   ];
   @override

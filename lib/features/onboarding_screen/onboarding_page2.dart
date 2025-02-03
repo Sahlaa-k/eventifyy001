@@ -17,8 +17,8 @@ class _onBoarding2State extends State<onBoarding2> {
     return Scaffold(
       backgroundColor: ColorConstant.BackgroundColor,
       body: SizedBox(
-        height: height*1,
-        width: width*1,
+        height: height* 1,
+        width: width* 1,
         child: Padding(
           padding:  EdgeInsets.all(width*0.1),
           child: Column(

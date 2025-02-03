@@ -36,8 +36,8 @@ class _onBoarding3State extends State<onBoarding3> {
                     ),
                   ),
                   Container(
-                    height: width * 0.4,
-                    width: width * 0.4,
+                    height: width *  0.4,
+                    width: width *  0.4,
                     decoration: BoxDecoration(
                       color: ColorConstant.secondaryColor,
                       borderRadius: BorderRadius.all(

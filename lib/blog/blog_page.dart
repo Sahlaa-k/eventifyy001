@@ -20,7 +20,7 @@ class _BlogPageState extends State<BlogPage> {
     height = MediaQuery.of(context).size.height;
     width = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: ColorConstant.secondaryColor,
+      backgroundColor:  ColorConstant.secondaryColor,
       appBar: AppBar(
         actions: [
           SvgPicture.asset(IconConstant.searchIcon),

@@ -140,7 +140,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   SizedBox(height: height*.15,),
                   
-                  Row(mainAxisAlignment: MainAxisAlignment.center,
+                  Row  (mainAxisAlignment: MainAxisAlignment.center,
 
                     children: [
                       Text("Don't have an account",style: TextStyle(fontSize: height*.02,fontWeight: FontWeight.w600),),

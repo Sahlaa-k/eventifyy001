@@ -106,7 +106,7 @@ class _onBoarding1State extends State<onBoarding1> {
 
               Text(
                 "Making Your Celebrations Stand Out !",
-                style: TextStyle(
+                style:   TextStyle(
                     color: ColorConstant.thirdColor,
                     fontSize: width * 0.08,
                     fontWeight: FontWeight.w700),

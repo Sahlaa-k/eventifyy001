@@ -24,7 +24,7 @@ class _onBoarding4State extends State<onBoarding4> {
           child: Column(
 
             children: [
-              Row(
+              Row  (
                 children: [
                   Container(
                     height: width*0.4,

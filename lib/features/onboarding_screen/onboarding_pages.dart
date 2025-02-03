@@ -25,11 +25,11 @@ class _OnboardingPagesState extends State<OnboardingPages> {
       ValueNotifier<int>(0);
 
   List<Map<String, dynamic>> onBoardingData = [
-    {"page": onBoarding1()},
-    {"page": onBoarding2()},
-    {"page": onBoarding3()},
-    {"page": onBoarding4()},
-    {"page": onBoarding5()},
+    {"page":  onBoarding1()},
+    {"page":  onBoarding2()},
+    {"page":  onBoarding3()},
+    {"page":  onBoarding4()},
+    {"page":  onBoarding5()},
   ];
 
   @override

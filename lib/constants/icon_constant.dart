@@ -5,5 +5,5 @@ class IconConstant{
   static const profileIcon="assets/icons/profile-icon.svg";
   static const communityIcon="assets/icons/community-icon.svg";
   static const saveIcon="assets/icons/save_icon.svg";
-  static const searchIcon="assets/icons/search_icon.svg";
+  static const searchIcon ="assets/icons/search_icon.svg";
 }
