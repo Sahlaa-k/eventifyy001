@@ -3,7 +3,6 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'features/cake/cake_home.dart';
 import 'features/login/login_page.dart';
 import 'features/onboarding_screen/onboarding_page1.dart';
 import 'features/onboarding_screen/splash_screen.dart';

@@ -26,52 +26,57 @@ class _onBoarding1State extends State<onBoarding1> {
               children: [
                 Row(
                   children: [
-                    Column(
-                      children: [
-                        Container(
-                          height: width*0.4,
-                          width: width*0.4,
-                          decoration: BoxDecoration(
-                            color: ColorConstant.primaryColor,
-                            borderRadius: BorderRadius.all(
-                                          Radius.circular(width*0.2)
-                            ),
-                          ),
+                    Container(
+                      height: width*0.4,
+                      width: width*0.4,
+                      decoration: BoxDecoration(
+                        color: ColorConstant.primaryColor,
+                        borderRadius: BorderRadius.all(
+                                      Radius.circular(width*0.2)
                         ),
-                        Container(
-                          height: width*0.4,
-                          width: width*0.4,
-                          decoration: BoxDecoration(
-                              color: ColorConstant.BackgroundColor,
-                              borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(width*0.25),
-                                bottomRight:Radius.circular(width*0.25),
-                              )
-
-                          ),
-                        ),
-                      ],
+                      ),
                     ),
+                    Container(
+                      height: width*0.4,
+                      width: width*0.4,
+                      decoration: BoxDecoration(
+                          color: ColorConstant.BackgroundColor,
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(width*0.25),
+                            bottomRight:Radius.circular(width*0.25),
+                          )
 
+                      ),
+                    ),
+]),
 
-                Column(
+                Row(
                   children: [
 
                     Container(
-                      height: width*0.8,
+                      height: width*0.4,
                       width: width*0.4,
                       decoration: BoxDecoration(
                           color: ColorConstant.thirdColor,
                           borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(width*0.2),
-                            topLeft:Radius.circular(width*0.2),
+                  bottomRight: Radius.circular(width*0.2),
+                           // topLeft:Radius.circular(width*0.2),
                           ),
                           image: DecorationImage(image: AssetImage(ImageConstant.eventManagementStage),fit: BoxFit.cover)
 
                       ),
                     ),
-                  ],
-                ),]),
+    Container(
+    height: width*0.4,
+    width: width*0.4,
+    decoration: BoxDecoration(
+    color: ColorConstant.thirdColor,
+    borderRadius: BorderRadius.only(
+    topRight: Radius.circular(width*0.2)
+    ,bottomLeft:Radius.circular(width*0.2),
+    )
+    ),
+    ),]),
                 Row(
                   children: [
                     Container(
@@ -96,9 +101,8 @@ class _onBoarding1State extends State<onBoarding1> {
 
                           )
                       ),
-                    ),
-                  ],
-                ),
+                    ),]),
+
 
 
 
@@ -119,9 +123,9 @@ class _onBoarding1State extends State<onBoarding1> {
                 style: TextStyle(
                     color: ColorConstant.thirdColor, fontSize: width * 0.04),
               ),
-    ],
-    ),
-    )),
-    );
+
+          ])))
+      );
+
   }
 }

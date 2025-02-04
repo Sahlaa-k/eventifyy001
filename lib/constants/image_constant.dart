@@ -14,9 +14,8 @@ class ImageConstant{
   static const photoGrapher1="assets/image/photography2.jpeg";
   static const photoGrapher2="assets/image/photography3.jpg";
   static const photoGrapher3="assets/image/photography4.jpg";
-  static const table="assets/image/stagepic.jpeg";
+  static const table="assets/image/tabletable.jpeg";
   static const weddingPic="assets/image/eventmanage.jpg";
-
-  static const catering="assets/image/catering.webp";
+  static const catering="assets/image/catering2.jpeg";
 
 }
