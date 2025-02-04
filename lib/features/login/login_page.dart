@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../constants/color_constant.dart';
 import '../../main.dart';
+import '../bottom_navigation/bottom_navigation_bar.dart';
 import 'otp_verification.dart';
 
 class LoginPage extends StatefulWidget {
@@ -114,14 +115,19 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                   ),
-                  Container(
-                    height: height*.06,
-                    width: width*.7,
-                    decoration: BoxDecoration(
-                      color: ColorConstant.primaryColor,
-                      borderRadius: BorderRadius.circular(width*.02)
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => BottomNavigationPage(),));
+                    },
+                    child: Container(
+                      height: height*.06,
+                      width: width*.7,
+                      decoration: BoxDecoration(
+                        color: ColorConstant.primaryColor,
+                        borderRadius: BorderRadius.circular(width*.02)
+                      ),
+                      child: Center(child: Text("LogIn",style: GoogleFonts.poppins(color: Colors.white,fontSize: height*.02,fontWeight: FontWeight.w500),),),
                     ),
-                    child: Center(child: Text("LogIn",style: GoogleFonts.poppins(color: Colors.white,fontSize: height*.02,fontWeight: FontWeight.w500),),),
                   ),
                   SizedBox(height: height*.02,),
                   GestureDetector(
@@ -150,7 +156,12 @@ class _LoginPageState extends State<LoginPage> {
                         },
                         child: Padding(
                           padding: EdgeInsets.all(width*.015),
-                          child: Text("SignUp",style: TextStyle(color: ColorConstant.primaryColor, fontSize: height*.02,fontWeight: FontWeight.w600),),
+                          child: GestureDetector(
+                              onTap: () {
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => SignupPage(),));
+
+                              },
+                              child: Text("SignUp",style: TextStyle(color: ColorConstant.primaryColor, fontSize: height*.02,fontWeight: FontWeight.w600),)),
                         ),
                       ),
 

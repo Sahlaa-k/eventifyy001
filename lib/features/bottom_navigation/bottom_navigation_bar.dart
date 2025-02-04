@@ -1,12 +1,14 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:eventify001/features/bottom_navigation/ventors/vendors_page.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../blog/blog_page.dart';
-import '../constants/color_constant.dart';
-import '../constants/icon_constant.dart';
-import '../main.dart';
+
+import '../../constants/color_constant.dart';
+import '../../constants/icon_constant.dart';
+import '../../main.dart';
+import 'blog/blog_page.dart';
 
 class BottomNavigationPage extends StatefulWidget {
   const BottomNavigationPage({super.key});
@@ -19,7 +21,7 @@ class _BottomNavigationPageState extends State<BottomNavigationPage> {
   int selectintex = 0;
   List pages = [
      Container(),
-    //VendorsPage(),
+    VendorsPage(),
      BlogPage(),
     Container(),
   ];

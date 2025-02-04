@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../constants/color_constant.dart';
 import '../../main.dart';
+import '../bottom_navigation/bottom_navigation_bar.dart';
 class SignupPage extends StatefulWidget {
   const SignupPage({super.key});
 
@@ -111,14 +112,19 @@ class _SignupPageState extends State<SignupPage> {
                       ),
                     ),
                   ),
-                  Container(
-                    height: height*.06,
-                    width: width*.7,
-                    decoration: BoxDecoration(
-                      color: ColorConstant.primaryColor,
-                      borderRadius: BorderRadius.circular(width*.02)
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => BottomNavigationPage(),));
+                    },
+                    child: Container(
+                      height: height*.06,
+                      width: width*.7,
+                      decoration: BoxDecoration(
+                        color: ColorConstant.primaryColor,
+                        borderRadius: BorderRadius.circular(width*.02)
+                      ),
+                      child: Center(child: Text("Sign Up",style: GoogleFonts.poppins(color: Colors.white,fontSize: height*.02,fontWeight: FontWeight.w500),),),
                     ),
-                    child: Center(child: Text("LogIn",style: GoogleFonts.poppins(color: Colors.white,fontSize: height*.02,fontWeight: FontWeight.w500),),),
                   ),
                   SizedBox(height: height*.2,),
                   Row(mainAxisAlignment: MainAxisAlignment.center,
@@ -131,7 +137,7 @@ class _SignupPageState extends State<SignupPage> {
                         },
                         child: Padding(
                           padding: EdgeInsets.all(width*.015),
-                          child: Text("SignUp",style: TextStyle(color: ColorConstant.primaryColor, fontSize: height*.02,fontWeight: FontWeight.w600),),
+                          child: Text("Login",style: TextStyle(color: ColorConstant.primaryColor, fontSize: height*.02,fontWeight: FontWeight.w600),),
                         ),
                       ),
 
