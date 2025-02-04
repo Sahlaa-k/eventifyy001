@@ -16,7 +16,7 @@ class _SignupPageState extends State<SignupPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorConstant.BackgroundColor,
+      backgroundColor: ColorConstant.backgroundColor,
       body: SingleChildScrollView(
         child: SizedBox(
           width: width *  1.5,

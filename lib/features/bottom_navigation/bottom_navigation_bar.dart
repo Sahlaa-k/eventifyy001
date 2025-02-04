@@ -20,8 +20,10 @@ class BottomNavigationPage extends StatefulWidget {
 class _BottomNavigationPageState extends State<BottomNavigationPage> {
   int selectintex = 0;
   List pages = [
+
      Container(),
     VendorsPage(),
+    Container(),
      BlogPage(),
     Container(),
   ];
@@ -34,13 +36,14 @@ class _BottomNavigationPageState extends State<BottomNavigationPage> {
           index: 0,
           items: [
             SvgPicture.asset(IconConstant.homeIcon,height: width*0.09,),
+            SvgPicture.asset(IconConstant.vendor,height: width*0.09,),
             SvgPicture.asset(IconConstant.communityIcon,height: width*0.09,),
             SvgPicture.asset(IconConstant.blogIcon,height: width*0.09,),
             SvgPicture.asset(IconConstant.profileIcon,height: width*0.09,),
           ],
           color: ColorConstant.primaryColor,
           buttonBackgroundColor: ColorConstant.primaryColor,
-          backgroundColor: ColorConstant.BackgroundColor,
+          backgroundColor: ColorConstant.backgroundColor,
           animationCurve: Curves.easeInOut,
           animationDuration: Duration(milliseconds: 600),
           onTap: (value) {

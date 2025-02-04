@@ -128,7 +128,7 @@ class _OnboardingPagesState extends State<OnboardingPages> {
                                       child: Text(
                                     "Get Started",
                                     style: TextStyle(
-                                        color: ColorConstant.BackgroundColor,fontSize: width*0.04,fontWeight: FontWeight.w700),
+                                        color: ColorConstant.backgroundColor,fontSize: width*0.04,fontWeight: FontWeight.w700),
                                   )),
                                 )
                               : Text("Next",style: TextStyle(color: ColorConstant.red,fontSize: width*0.04,fontWeight: FontWeight.w700),),

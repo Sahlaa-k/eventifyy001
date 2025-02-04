@@ -82,7 +82,7 @@ class _onBoarding3State extends State<onBoarding3> {
                     height: width * 0.4,
                     width: width * 0.4,
                     decoration: BoxDecoration(
-                        color: ColorConstant.BackgroundColor,
+                        color: ColorConstant.backgroundColor,
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(width * 0.2),
                           bottomLeft: Radius.circular(width * 0.2),
@@ -108,14 +108,14 @@ class _onBoarding3State extends State<onBoarding3> {
               Text(
                 "Quality You Can Taste, Joy You Can Share!",
                 style: TextStyle(
-                    color: ColorConstant.BackgroundColor,
+                    color: ColorConstant.backgroundColor,
                     fontSize: width * 0.08,
                     fontWeight: FontWeight.w700),
               ),
               SizedBox(height: width*0.03,),
               Text(
                 "Celebrate every occasion with top-quality cakes and thoughtfully chosen gifts. Experience the perfect blend of elegance and taste.",
-                style: TextStyle(color: ColorConstant.BackgroundColor,fontSize: width*0.04),
+                style: TextStyle(color: ColorConstant.backgroundColor,fontSize: width*0.04),
               )
             ],
           ),

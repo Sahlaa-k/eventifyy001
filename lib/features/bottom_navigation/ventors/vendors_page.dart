@@ -21,7 +21,7 @@ class _VendorsPageState extends State<VendorsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorConstant.BackgroundColor,
+      backgroundColor: ColorConstant.backgroundColor,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [

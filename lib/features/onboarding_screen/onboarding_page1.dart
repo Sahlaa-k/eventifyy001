@@ -20,7 +20,7 @@ class _onBoarding1State extends State<onBoarding1> {
         padding:  EdgeInsets.all(width*0.1),
         child: Column(
           children: [
-            Container( height: width*1.2,width: width*.8,color: ColorConstant.BackgroundColor,
+            Container( height: width*1.2,width: width*.8,color: ColorConstant.backgroundColor,
               child: Row(children: [
                 Column(
                   children: [

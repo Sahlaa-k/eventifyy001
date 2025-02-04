@@ -43,7 +43,7 @@ class _onBoarding4State extends State<onBoarding4> {
                     height: width*0.4,
                     width: width*0.4,
                     decoration: BoxDecoration(
-                        color: ColorConstant.BackgroundColor,
+                        color: ColorConstant.backgroundColor,
                         borderRadius: BorderRadius.only(
                             topLeft: Radius.circular(width*0.2),
                           topRight:  Radius.circular(width*0.2),
@@ -108,14 +108,14 @@ class _onBoarding4State extends State<onBoarding4> {
               Text(
                 "Every Click ,\nA Timeless Memory",
                 style: TextStyle(
-                    color: ColorConstant.BackgroundColor,
+                    color: ColorConstant.backgroundColor,
                     fontSize: width * 0.08,
                     fontWeight: FontWeight.w700),
               ),
               SizedBox(height: width*0.03,),
               Text(
                 "We believe in capturing emotions, not just images. Experience photography that reflects the highest standards of quality and care.",
-                style: TextStyle(color: ColorConstant.BackgroundColor,fontSize: width*0.04),
+                style: TextStyle(color: ColorConstant.backgroundColor,fontSize: width*0.04),
               )
             ],
           ),

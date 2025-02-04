@@ -33,7 +33,7 @@ class _SplashScreenState extends State<SplashScreen> {
         body: Center(
           child: Text(
             " Eventify ",
-            style: GoogleFonts.laBelleAurore(color: ColorConstant.BackgroundColor,
+            style: GoogleFonts.laBelleAurore(color: ColorConstant.backgroundColor,
         fontSize: width*0.12,
 
           )),

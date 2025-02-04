@@ -15,7 +15,7 @@ class _onBoarding2State extends State<onBoarding2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorConstant.BackgroundColor,
+      backgroundColor: ColorConstant.backgroundColor,
       body: SizedBox(
         height: height* 1,
         width: width* 1,

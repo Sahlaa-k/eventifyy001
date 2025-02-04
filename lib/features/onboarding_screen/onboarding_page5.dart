@@ -30,7 +30,7 @@ class _onBoarding5State extends State<onBoarding5> {
                     height: width*0.4,
                     width: width*0.4,
                     decoration: BoxDecoration(
-                      color: ColorConstant.BackgroundColor,
+                      color: ColorConstant.backgroundColor,
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(width*0.25)
                       ),
