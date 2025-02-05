@@ -1,8 +1,10 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:eventify001/features/bottom_navigation/profile/profile_page.dart';
 import 'package:eventify001/features/bottom_navigation/ventors/vendors_page.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
 
 import '../../constants/color_constant.dart';
 import '../../constants/icon_constant.dart';

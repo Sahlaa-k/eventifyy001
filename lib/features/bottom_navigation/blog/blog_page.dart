@@ -22,22 +22,63 @@ class _BlogPageState extends State<BlogPage> {
     height = MediaQuery.of(context).size.height;
     width = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor:  ColorConstant.secondaryColor,
+      backgroundColor:  ColorConstant.backgroundColor,
       appBar: AppBar(
+        surfaceTintColor: ColorConstant.backgroundColor,
         actions: [
-          SvgPicture.asset(IconConstant.searchIcon),
-          SvgPicture.asset(IconConstant.saveIcon),
+          Padding(
+            padding:  EdgeInsets.all(width*0.03),
+            child: SvgPicture.asset(IconConstant.searchIcon),
+          ),
+          Padding(
+            padding:  EdgeInsets.all(width*0.03),
+            child: SvgPicture.asset(IconConstant.saveIcon),
+          ),
         ],
-        backgroundColor: ColorConstant.secondaryColor,
+        backgroundColor: ColorConstant.backgroundColor,
         title:Text("Blog",style: GoogleFonts.aBeeZee(
           color: ColorConstant.primaryColor,
           fontWeight: FontWeight.w700,
-          fontSize: width*0.15,
+          fontSize: width*0.1,
         ),
         ),
       ),
-      body: Column(
-
+      body: Padding(
+        padding:  EdgeInsets.all(width*0.03),
+        child: ListView.separated(
+          itemCount: 8,
+          itemBuilder: (context, index) {
+            return Stack(
+              children:[ Container(
+                height: width*0.8,
+                width: width,
+                decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                          color: ColorConstant.grey,
+                          blurRadius:4,
+                          spreadRadius: 2,
+                          offset:Offset(0,4)
+                      )
+                    ],
+                    color: ColorConstant.secondaryColor,
+                    borderRadius: BorderRadius.circular(width*0.03)
+                ),
+              ),
+                Container(
+                  height: width*0.04,
+                  width: width,
+                ),
+            ],
+            );
+          },
+          shrinkWrap: true,
+          separatorBuilder: (BuildContext context, int index) {
+            return SizedBox(
+              height: width*0.03,
+            );
+          },
+        ),
       ),
     );
   }

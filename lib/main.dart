@@ -3,6 +3,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'features/bottom_navigation/blog/blog_page.dart';
+import 'features/bottom_navigation/bottom_navigation_bar.dart';
 import 'features/login/login_page.dart';
 import 'features/onboarding_screen/onboarding_page1.dart';
 import 'features/onboarding_screen/splash_screen.dart';
@@ -34,7 +36,7 @@ class EventAPP extends StatelessWidget {
       },
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home:SplashScreen() ,
+        home:BlogPage() ,
 theme:  ThemeData(
   textTheme: GoogleFonts.abhayaLibreTextTheme(),
 ),

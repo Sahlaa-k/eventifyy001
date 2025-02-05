@@ -8,5 +8,6 @@ class ColorConstant{
   static const backgroundColor=Colors.white;
   static const thirdColor=Color(0xff000000);
   static const red=Color(0xffA0522D);
-  static const grey=Color(0xffF5DEB3);
+  static const cream=Color(0xffF5DEB3);
+  static const grey=Color(0xff6b6b6b);
 }
