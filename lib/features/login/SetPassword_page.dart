@@ -1,28 +1,24 @@
-
+import 'package:eventify001/constants/color_constant.dart';
+import 'package:eventify001/features/bottom_navigation/bottom_navigation_bar.dart';
 import 'package:eventify001/features/login/signup_page.dart';
+import 'package:eventify001/main.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import '../../constants/color_constant.dart';
-import '../../main.dart';
-import '../bottom_navigation/bottom_navigation_bar.dart';
-import 'otp_verification.dart';
-
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class SetpasswordPage extends StatefulWidget {
+  const SetpasswordPage({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<SetpasswordPage> createState() => _SetpasswordPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _SetpasswordPageState extends State<SetpasswordPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorConstant.backgroundColor,
       body: SingleChildScrollView(
         child: SizedBox(
-          width: width * 1.5,
+          width: width *  1.5,
           height: height * 1,
           child: Stack(
             children: [
@@ -62,17 +58,17 @@ class _LoginPageState extends State<LoginPage> {
                 // mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  SizedBox(height: height*.35,),
+                  SizedBox(height: height*.4,),
                   Padding(
                     padding:
                         EdgeInsets.only(left: width * .08, right: width * .08,bottom: width * .08),
                     child: TextFormField(
                       decoration: InputDecoration(
                         // labelText: 'Enter your text',
-                        hintText: 'Enter Mobile or E-mail',
+                        hintText: 'Enter a Password',
                         hintStyle: TextStyle(
                             color: Colors.black54, fontWeight: FontWeight.w600),
-                        prefixIcon: Icon(Icons.mail_outline_outlined),
+                        prefixIcon: Icon(Icons.password),
                         // suffixIcon: Icon(Icons.check_circle, color: Colors.green),
                         filled: true,
                         fillColor: Colors.white,
@@ -95,10 +91,10 @@ class _LoginPageState extends State<LoginPage> {
                     child: TextFormField(
                       decoration: InputDecoration(
                         // labelText: 'Enter your text',
-                        hintText: 'Enter your Password',
+                        hintText: 'Enter a Confirm Password',
                         hintStyle: TextStyle(
                             color: Colors.black54, fontWeight: FontWeight.w600),
-                        prefixIcon: Icon(Icons.lock),
+                        prefixIcon: Icon(Icons.password),
                         // suffixIcon: Icon(Icons.check_circle, color: Colors.green),
                         filled: true,
                         fillColor: Colors.white,
@@ -126,47 +122,11 @@ class _LoginPageState extends State<LoginPage> {
                         color: ColorConstant.primaryColor,
                         borderRadius: BorderRadius.circular(width*.02)
                       ),
-                      child: Center(child: Text("LogIn",style: GoogleFonts.poppins(color: Colors.white,fontSize: height*.02,fontWeight: FontWeight.w500),),),
+                      child: Center(child: Text("Sign Up",style: GoogleFonts.poppins(color: Colors.white,fontSize: height*.02,fontWeight: FontWeight.w500),),),
                     ),
                   ),
-                  SizedBox(height: height*.02,),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => OtpVerification(),));
-                    },
-                    child: Container(
-                      height: height*.06,
-                      width: width*.7,
-                      decoration: BoxDecoration(
-                        color: ColorConstant.primaryColor,
-                        borderRadius: BorderRadius.circular(width*.02)
-                      ),
-                      child: Center(child: Text("Login with OTP",style: GoogleFonts.poppins(color: Colors.white,fontSize: height*.02,fontWeight: FontWeight.w500),),),
-                    ),
-                  ),
-                  SizedBox(height: height*.15,),
+                  // SizedBox(height: height*.2,),
                   
-                  Row  (mainAxisAlignment: MainAxisAlignment.center,
-
-                    children: [
-                      Text("Don't have an account",style: TextStyle(fontSize: height*.02,fontWeight: FontWeight.w600),),
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => SignupPage(),));
-                        },
-                        child: Padding(
-                          padding: EdgeInsets.all(width*.015),
-                          child: GestureDetector(
-                              onTap: () {
-                                Navigator.push(context, MaterialPageRoute(builder: (context) => SignupPage(),));
-
-                              },
-                              child: Text("Create Now",style: TextStyle(color: ColorConstant.primaryColor, fontSize: height*.02,fontWeight: FontWeight.w600),)),
-                        ),
-                      ),
-
-                    ],
-                  )
                 ],
               ),
             ],
