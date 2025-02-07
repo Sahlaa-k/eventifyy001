@@ -7,6 +7,7 @@ import 'package:line_icons/line_icon.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../../main.dart';
+import 'clip_rect.dart';
 
 class BlogTab extends StatefulWidget {
   const BlogTab({super.key});
@@ -143,20 +144,18 @@ class _BlogTabState extends State<BlogTab> {
             SizedBox(
               height: height * 0.01,
             ),
-            Container(
-              height: height * 0.04,
-              width: width*0.3,
-              color: ColorConstant.primaryColor,
-              child: Padding(
-                padding: EdgeInsets.only(left: width * 0.05),
-                child: Align(
-                  alignment: Alignment.centerLeft,
+            Align(
+              alignment: Alignment.bottomLeft,
+              child: ClipPath(
+                clipper: ArrowClipper(), // Custom Clipper for Arrow
+                child: Container(
+                  width: width*0.3,
+                  height: height*0.03,
+                  color: ColorConstant.primaryColor,
+                  alignment: Alignment.center,
                   child: Text(
                     "Trending",
-                    style: TextStyle(
-                        color: ColorConstant.backgroundColor,
-                        fontWeight: FontWeight.w700,
-                        fontSize: width * 0.05),
+                    style: TextStyle(color: ColorConstant.backgroundColor, fontSize: 18),
                   ),
                 ),
               ),
@@ -221,11 +220,11 @@ class _BlogTabState extends State<BlogTab> {
                             ),
                           ),
                           SizedBox(
-                            height: width * 0.42,
+                            height: width * 0.4,
                           ),
                           Container(
                             height: height * 0.04,
-                            width: width * 0.28,
+                            width: width * 0.29,
                             margin: EdgeInsets.only(left: width * 0.02),
                             decoration: BoxDecoration(
                               color: Colors.black54,
@@ -241,7 +240,7 @@ class _BlogTabState extends State<BlogTab> {
                             )),
                           ),
                           SizedBox(
-                            height: height * 0.008,
+                            height: height * 0.006,
                           ),
                           Container(
                             height: height * 0.07,
@@ -286,19 +285,18 @@ class _BlogTabState extends State<BlogTab> {
             SizedBox(
               height: height * 0.02,
             ),
-            Container(
-              height: height * 0.04,
-              color: ColorConstant.primaryColor,
-              child: Padding(
-                padding: EdgeInsets.only(left: width * 0.05),
-                child: Align(
-                  alignment: Alignment.centerLeft,
+            Align(
+              alignment: Alignment.bottomLeft,
+              child: ClipPath(
+                clipper: ArrowClipper(), // Custom Clipper for Arrow
+                child: Container(
+                  width: width*0.3,
+                  height: height*0.03,
+                  color: ColorConstant.primaryColor,
+                  alignment: Alignment.center,
                   child: Text(
                     "Categories",
-                    style: TextStyle(
-                        color: ColorConstant.backgroundColor,
-                        fontWeight: FontWeight.w700,
-                        fontSize: width * 0.05),
+                    style: TextStyle(color: ColorConstant.backgroundColor, fontSize: 18),
                   ),
                 ),
               ),
