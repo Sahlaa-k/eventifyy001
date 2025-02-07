@@ -1,4 +1,6 @@
 
+import 'package:eventify001/features/bottom_navigation/home/home_page.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pinput/pinput.dart';
@@ -24,10 +26,10 @@ class _OtpVerificationState extends State<OtpVerification> {
               Container(
                 width: double.infinity,
                 height: height* 0.88,
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                     borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(70),
-                        bottomRight: Radius.circular(70)),
+                        bottomLeft: Radius.circular(height*.07),
+                        bottomRight: Radius.circular(height*.5)),
                     color: Colors.white),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -67,7 +69,7 @@ class _OtpVerificationState extends State<OtpVerification> {
                       ],
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(top: 8, bottom: 20),
+                      padding: EdgeInsets.only(top: height*.008, bottom: height*.02),
                       child: Text("email",
                         // widget.email,
                         style: GoogleFonts.outfit(
@@ -78,16 +80,27 @@ class _OtpVerificationState extends State<OtpVerification> {
                     ),
 
                     Pinput(
-                        // controller: pinController,
-                        // obscureText: true,
-                        length: 6,
-                        cursor: const Text("__")),
+              length: 6,
+              defaultPinTheme: PinTheme(
+                  height: height * 0.06,
+                  width: width * 0.125,
+                  textStyle: TextStyle(fontSize: height*.025,fontWeight: FontWeight.w700),
+                  decoration: BoxDecoration(
+                    
+                      border: Border.all(
+                        
+                        color: ColorConstant.secondaryColor,
+                        width: width*.01,
+                      ),
+                      borderRadius: BorderRadius.circular(width*.05))),
+            ),
+            
 
                     // Row(
                     //   mainAxisAlignment: MainAxisAlignment.center,
                     //   children: [
                     //     Container(
-                    //       width: width*.1,
+                    //       width: width*.12,
                     //       // height: 42,
                     //       decoration: BoxDecoration(
                     //         shape: BoxShape.circle,
@@ -159,7 +172,7 @@ class _OtpVerificationState extends State<OtpVerification> {
                     //   ],
                     // ),
                     Padding(
-                      padding: const EdgeInsets.only(top: 20, bottom: 20),
+                      padding: EdgeInsets.only(top: height*.02, bottom: height*.02),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -167,7 +180,7 @@ class _OtpVerificationState extends State<OtpVerification> {
                             'Do not send OTP  ?',
                             style: GoogleFonts.outfit(
                                 fontWeight: FontWeight.w400,
-                                fontSize: 12,
+                                fontSize: height*.015,
                                 color: Colors.black),
                           ),
                           InkWell(
@@ -178,8 +191,8 @@ class _OtpVerificationState extends State<OtpVerification> {
                               '  Sent OTP',
                               style: GoogleFonts.outfit(
                                   fontWeight: FontWeight.w600,
-                                  fontSize: 12,
-                                  color: const Color(0xffE9890A)),
+                                  fontSize: height*.018,
+                                  color: ColorConstant.primaryColor),
                             ),
                           ),
                         ],
@@ -190,20 +203,20 @@ class _OtpVerificationState extends State<OtpVerification> {
                       children: [
                         InkWell(
                           onTap: () {
-                            
+                            Navigator.pushAndRemoveUntil(context, CupertinoPageRoute(builder: (context) => HomePage(),), (route) => false,);
                           },
                           child: Container(
-                            width: 259,
-                            height: 39,
+                            width: width*.6,
+                            height: height*.05,
                             decoration: BoxDecoration(
-                                color: const Color(0xff7A00E6),
-                                borderRadius: BorderRadius.circular(10)),
+                                color: ColorConstant.primaryColor,
+                                borderRadius: BorderRadius.circular(width*.02)),
                             child: Center(
                               child: Text(
                                 'Submit',
                                 style: GoogleFonts.poppins(
                                     fontWeight: FontWeight.w700,
-                                    fontSize: 15,
+                                    fontSize: height*.019,
                                     color: Colors.white),
                               ),
                             ),
