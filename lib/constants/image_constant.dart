@@ -2,9 +2,8 @@ class ImageConstant{
   static const gift="assets/image/gift.jpg";
   static const cakeAndGift="assets/image/cake_and_gift.avif";
   static const cake2="assets/image/cake2.webp";
-  static const eventManagementStage="";
-  static const eventManagementFood="";
-  static const eventManagementCatering="";
+  static const eventManagementStage="assets/image/stage.jpg";
+
   static const singer="assets/image/singer.jpeg";
   static const dance="assets/image/dance.webp";
   static const dance_singer="assets/image/dance4.jpg";

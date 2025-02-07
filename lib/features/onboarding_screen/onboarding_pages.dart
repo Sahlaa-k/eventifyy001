@@ -74,7 +74,7 @@ class _OnboardingPagesState extends State<OnboardingPages> {
                     count: onBoardingData.length,
                     effect: WormEffect(
                       activeDotColor: ColorConstant.red,
-                      dotColor: ColorConstant.grey,
+                      dotColor: ColorConstant.cream,
                       dotHeight: width * 0.02,
                       dotWidth: width * 0.02,
                     ),

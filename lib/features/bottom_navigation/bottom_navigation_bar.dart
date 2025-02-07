@@ -38,6 +38,7 @@ class _BottomNavigationPageState extends State<BottomNavigationPage> {
     return Scaffold(
       extendBody: true, // Ensures the navigation bar overlaps the body
       bottomNavigationBar: CurvedNavigationBar(
+
         index: selectIndex,
         items: [
           SvgPicture.asset(
@@ -80,6 +81,7 @@ class _BottomNavigationPageState extends State<BottomNavigationPage> {
         buttonBackgroundColor: ColorConstant.primaryColor, // Matches page background
         backgroundColor: Colors.transparent, // Makes the navigation bar float
         animationCurve: Curves.easeInOut,
+
         animationDuration: const Duration(milliseconds: 600),
         onTap: (value) {
           setState(() {
@@ -87,6 +89,7 @@ class _BottomNavigationPageState extends State<BottomNavigationPage> {
           });
         },
         letIndexChange: (index) => true,
+
       ),
       body: pages[selectIndex],
     );

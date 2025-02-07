@@ -117,7 +117,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => BottomNavigationPage(),));
+                      Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => BottomNavigationPage(),),(route) => false,);
                     },
                     child: Container(
                       height: height*.06,
