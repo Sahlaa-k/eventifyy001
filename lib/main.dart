@@ -22,7 +22,12 @@ late double width;
 //       builder: (context) =>  EventAPP()));
 // }
 void main(){
-  runApp(EventAPP());
+  runApp(DevicePreview(
+    enabled: kDebugMode,
+      tools: const [
+        ...DevicePreview.defaultTools,
+      ],
+      builder: (context) =>  EventAPP()));
 }
 class EventAPP extends StatelessWidget {
   const EventAPP({super.key});
