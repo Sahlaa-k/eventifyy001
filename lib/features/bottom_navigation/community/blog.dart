@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:eventify001/constants/color_constant.dart';
 import 'package:eventify001/constants/image_constant.dart';
+import 'package:eventify001/features/bottom_navigation/community/view_blog_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:line_icons/line_icon.dart';
@@ -121,6 +122,26 @@ class _BlogTabState extends State<BlogTab> {
     ImageConstant.car,
     ImageConstant.jewellery2
   ];
+  bool isSaved = false;
+  List<Map> bottom = [
+    {
+      "icon": Icons.share,
+      "title": "Share",
+      // "navigation":
+    },
+    {
+      "icon": Icons.queue_play_next_outlined,
+      "title": "Browse Kamal Sha",
+    },
+    {
+      "icon": Icons.visibility_off,
+      "title": "Show less of such content",
+    },
+    {
+      "icon": Icons.flag_outlined,
+      "title": "Report",
+    },
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -133,30 +154,27 @@ class _BlogTabState extends State<BlogTab> {
             ),
             Container(
               height: height * 0.04,
-              child: Center(
-                child: Text(
-                  "Search Your Own Wedding Ideas!",
-                  style: GoogleFonts.lemon(
-                      color: ColorConstant.thirdColor, fontSize: width * 0.04),
-                ),
+              width: width * 1,
+              //color: ColorConstant.primaryColor,
+              child: Text(
+                "Blog Of Ideas",
+                style: GoogleFonts.lemon(
+                    color: ColorConstant.primaryColor, fontSize: width * 0.05),
               ),
             ),
             SizedBox(
               height: height * 0.01,
             ),
-            Align(
-              alignment: Alignment.bottomLeft,
-              child: ClipPath(
-                clipper: ArrowClipper(), // Custom Clipper for Arrow
-                child: Container(
-                  width: width*0.3,
-                  height: height*0.03,
-                  color: ColorConstant.primaryColor,
-                  alignment: Alignment.center,
-                  child: Text(
-                    "Trending",
-                    style: TextStyle(color: ColorConstant.backgroundColor, fontSize: 18),
-                  ),
+            Padding(
+              padding: EdgeInsets.only(left: width * 0.03),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "Trending",
+                  style: TextStyle(
+                      color: ColorConstant.primaryColor,
+                      fontWeight: FontWeight.w500,
+                      fontSize: width * 0.06),
                 ),
               ),
             ),
@@ -201,6 +219,7 @@ class _BlogTabState extends State<BlogTab> {
                                   backgroundImage:
                                       AssetImage(ImageConstant.singer),
                                 ),
+                                SizedBox(width: width*0.02,),
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
@@ -285,23 +304,21 @@ class _BlogTabState extends State<BlogTab> {
             SizedBox(
               height: height * 0.02,
             ),
-            Align(
-              alignment: Alignment.bottomLeft,
-              child: ClipPath(
-                clipper: ArrowClipper(), // Custom Clipper for Arrow
-                child: Container(
-                  width: width*0.3,
-                  height: height*0.03,
-                  color: ColorConstant.primaryColor,
-                  alignment: Alignment.center,
-                  child: Text(
-                    "Categories",
-                    style: TextStyle(color: ColorConstant.backgroundColor, fontSize: 18),
-                  ),
+            Padding(
+              padding: EdgeInsets.only(left: width * 0.03),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "Categories",
+                  style: TextStyle(
+                      color: ColorConstant.primaryColor,
+                      fontWeight: FontWeight.w500,
+                      fontSize: width * 0.06),
                 ),
               ),
             ),
-            SizedBox(
+
+        SizedBox(
               height: height * 0.17,
               child: ListView.builder(
                 shrinkWrap: true,
@@ -359,65 +376,246 @@ class _BlogTabState extends State<BlogTab> {
             SizedBox(
               height: height * 0.02,
             ),
-            ListView.builder(
+            Padding(
+              padding: EdgeInsets.only(left: width * 0.03),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "Just For You",
+                  style: TextStyle(
+                      color: ColorConstant.primaryColor,
+                      fontWeight: FontWeight.w500,
+                      fontSize: width * 0.06),
+                ),
+              ),
+            ),
+            Divider(
+              color: Colors.black54,
+            ),
+            ListView.separated(
               itemCount: images.length,
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
               itemBuilder: (context, index) {
-                return Container(
-                  width: width * 0.8,
-                  height: height * 0.22,
-                  margin: EdgeInsets.only(bottom: width * 0.03),
-                  decoration: BoxDecoration(
-                    color: ColorConstant.backgroundColor,
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black
-                            .withOpacity(0.3), // Black shadow with opacity
-                        blurRadius: width * 0.02, // Softness of the shadow
-                        spreadRadius:
-                            width * 0.002, // How much the shadow expands
-                        offset: Offset(1, 3), // Moves shadow to bottom-right
-                      ),
-                    ],
-                    borderRadius: BorderRadius.circular(width * .02),
-                  ),
-                  child: Padding(
-                    padding: EdgeInsets.all(width * 0.03),
-                    child: Row(
-                      children: [
-                        Container(
-                          height: height * 0.4,
-                          width: width * 0.4,
-                          decoration: BoxDecoration(
-                              color: ColorConstant.primaryColor,
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(width * 0.03),
-                              ),
-                              image: DecorationImage(
-                                  image: AssetImage(images[index]),
-                                  fit: BoxFit.cover)),
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Text(
-                              "A Love Story Begins",
-                              style: TextStyle(color: ColorConstant.thirdColor),
-                            ),
-                            Expanded(
-                                child: Text(
-                              " Inspiration, Planning Tips,\n and Heartfelt Moments for \nYour Dream Day",
-                              style: TextStyle(color: ColorConstant.thirdColor),
-                            )),
-                          ],
-                        )
+                return GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ViewBlogPage(),
+                        ));
+                  },
+                  child: Container(
+                    width: width * 0.8,
+                    height: height * 0.22,
+                    // margin: EdgeInsets.all(width * 0.03),
+                    decoration: BoxDecoration(
+                      color: ColorConstant.backgroundColor,
+                      boxShadow: [
+                        // BoxShadow(
+                        //   color: Colors.black
+                        //       .withOpacity(0.3), // Black shadow with opacity
+                        //   blurRadius: width * 0.02, // Softness of the shadow
+                        //   spreadRadius:
+                        //       width * 0.002, // How much the shadow expands
+                        //   offset: Offset(1, 3), // Moves shadow to bottom-right
+                        // ),
                       ],
+                      //borderRadius: BorderRadius.circular(width * .02),
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.all(width * 0.03),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Container(
+                                height: width * 0.35,
+                                width: width * 0.5,
+                                child: Expanded(
+                                  child: Text(
+                                    " Inspiration, Planning Tips, and Heartfelt Moments for Your Dream Day",
+                                    style: TextStyle(
+                                        color: ColorConstant.thirdColor,
+                                        fontSize: width * 0.05,
+                                        fontWeight: FontWeight.w600),
+                                  ),
+                                ),
+                              ),
+                              Row(
+                                children: [
+                                  Padding(
+                                    padding:
+                                        EdgeInsets.only(left: width * 0.01),
+                                    child: CircleAvatar(
+                                      radius: width * 0.03,
+                                      backgroundImage:
+                                          AssetImage(ImageConstant.singer),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: width * 0.02,),
+                                  Row(
+                                    // crossAxisAlignment:
+                                    //     CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        "Ibrahim Sha ",
+                                        style:
+                                            TextStyle(color: ColorConstant.grey),
+                                      ),
+                                      Text(
+                                        "Aug,08,2020,",
+                                        style:
+                                        TextStyle(color: Colors.grey[400],fontSize: width*0.025),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              SizedBox(
+                                width: width * 0.4,
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    GestureDetector(
+                                      onTap: () {
+                                        setState(() {
+                                          isSaved = !isSaved;
+                                        });
+                                      },
+                                      child: Icon(
+                                        isSaved
+                                            ? Icons.bookmark
+                                            : Icons.bookmark_border_rounded,
+                                        color: isSaved
+                                            ? ColorConstant.grey
+                                            : ColorConstant.grey,
+                                      ),
+                                    ),
+                                    InkWell(
+                                      onTap: () {
+                                        showModalBottomSheet(
+                                          backgroundColor: Colors.transparent,
+                                          context: context,
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.only(
+                                              topLeft:
+                                              Radius.circular(width * 0.03),
+                                              topRight:
+                                              Radius.circular(width * 0.03),
+                                            ),
+                                          ),
+                                          builder: (context) {
+                                            return Container(
+                                              margin: EdgeInsets.only(
+                                                left: width * 0.02,
+                                                right: width * 0.02,
+                                                //bottom: width * 0.02,
+                                              ),
+                                              decoration: BoxDecoration(
+                                                color: Colors.white,
+                                                borderRadius: BorderRadius.only(
+                                                  topLeft: Radius.circular(
+                                                      width * 0.03),
+                                                  topRight: Radius.circular(
+                                                      width * 0.03),
+                                                ),
+                                              ),
+                                              child: Padding(
+                                                padding: EdgeInsets.symmetric(
+                                                  horizontal: width * 0.03,
+                                                  vertical: width * 0.03,
+                                                ),
+                                                child: ListView.builder(
+                                                  itemCount: bottom.length,
+                                                  shrinkWrap: true,
+                                                  physics:
+                                                  BouncingScrollPhysics(),
+                                                  itemBuilder:
+                                                      (context, index) {
+                                                    return Padding(
+                                                      padding: EdgeInsets.all(
+                                                          width * 0.02),
+                                                      child: Container(
+                                                        height: height * 0.05,
+                                                        child: Row(
+                                                          children: [
+                                                            Icon(
+                                                              bottom[index]
+                                                              ["icon"],
+                                                              color:
+                                                              Colors.black,
+                                                              size:
+                                                              width * 0.06,
+                                                            ),
+                                                            SizedBox(
+                                                              width:
+                                                              width * 0.04,
+                                                            ),
+                                                            Text(
+                                                              bottom[index]
+                                                              ["title"],
+                                                              style: TextStyle(
+                                                                color: Colors
+                                                                    .black,
+                                                                fontSize:
+                                                                width *
+                                                                    0.04,
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    );
+                                                  },
+                                                ),
+                                              ),
+                                            );
+                                          },
+                                        );
+                                      },
+                                      child: Icon(
+                                        Icons.more_vert,
+                                        color: ColorConstant.grey,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              SizedBox(height: width*0.02,),
+                              Container(
+                                height: width * 0.3,
+                                width: width * 0.4,
+                                decoration: BoxDecoration(
+                                    color: ColorConstant.primaryColor,
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(width * 0.03),
+                                    ),
+                                    image: DecorationImage(
+                                        image: AssetImage(images[index]),
+                                        fit: BoxFit.cover)),
+                              ),
+
+                                                         ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 );
-              },
+              }, separatorBuilder: (BuildContext context, int index) { return   Divider(
+              color: Colors.black54,
+            ); },
             )
           ],
         ),
