@@ -1,4 +1,5 @@
 
+import 'package:eventify001/features/bottom_navigation/bottom_navigation_bar.dart';
 import 'package:eventify001/features/bottom_navigation/home/home_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -203,7 +204,7 @@ class _OtpVerificationState extends State<OtpVerification> {
                       children: [
                         InkWell(
                           onTap: () {
-                            Navigator.pushAndRemoveUntil(context, CupertinoPageRoute(builder: (context) => HomePage(),), (route) => false,);
+                            Navigator.pushAndRemoveUntil(context, CupertinoPageRoute(builder: (context) => BottomNavigationPage(),), (route) => false,);
                           },
                           child: Container(
                             width: width*.6,

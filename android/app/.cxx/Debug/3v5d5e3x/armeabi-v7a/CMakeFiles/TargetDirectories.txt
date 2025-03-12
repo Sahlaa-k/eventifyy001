@@ -1,0 +1,2 @@
+D:/check_test/eventifyy001/android/app/.cxx/Debug/3v5d5e3x/armeabi-v7a/CMakeFiles/edit_cache.dir
+D:/check_test/eventifyy001/android/app/.cxx/Debug/3v5d5e3x/armeabi-v7a/CMakeFiles/rebuild_cache.dir

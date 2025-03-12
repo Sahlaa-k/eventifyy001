@@ -1,5 +1,7 @@
 import 'package:eventify001/constants/color_constant.dart';
 import 'package:eventify001/constants/image_constant.dart';
+import 'package:eventify001/features/bottom_navigation/ventors/vendorView_page.dart';
+import 'package:eventify001/features/bottom_navigation/ventors/vendor_sample.dart';
 import 'package:eventify001/main.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +34,7 @@ class _VendorsPageState extends State<VendorsPage> {
       "Category_image":ImageConstant.photoGrapher3
       },
     {
-      "Category_name": "Stage Decoration",
+      "Category_name": "Stage ",
       "Category_image":ImageConstant.eventManagementStage
       },
     {
@@ -124,7 +126,8 @@ class _VendorsPageState extends State<VendorsPage> {
                             top: height * .01),
                         child: GestureDetector(
                           onTap: () {
-                            Navigator.push(context, CupertinoPageRoute(builder: (context) => VendorsPage(),));
+                            // Navigator.push(context, CupertinoPageRoute(builder: (context) => VendorSample(vender: Categorys[index]),));
+                            Navigator.push(context, CupertinoPageRoute(builder: (context) => VendorviewPage(vender: Categorys[index]),));
                           },
                           child: Stack(
                             children: [
@@ -218,92 +221,98 @@ class _VendorsPageState extends State<VendorsPage> {
                             right: width * .05,
                             bottom: width * .01,
                             top: height * .01),
-                        child: Stack(
-                          children: [
-                            Align(
-                              alignment: Alignment.centerRight,
-                              child: Container(
+                        child: GestureDetector(
+                          onTap: () {
+                            // Navigator.push(context, CupertinoPageRoute(builder: (context) => VendorSample(vender: Categorys[index]),));
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => VendorviewPage(vender: Categorys[index],),));
+                          },
+                          child: Stack(
+                            children: [
+                              Align(
+                                alignment: Alignment.centerRight,
+                                child: Container(
+                                  height: height * .12,
+                                  width: width * .4,
+                          
+                                  decoration: BoxDecoration(
+                                      // border: Border.all(),
+                                      borderRadius:
+                                          BorderRadius.circular(width * .05),
+                                      image: DecorationImage(
+                                          image: AssetImage(
+                                            Categorys[index]["Category_image"],
+                                          ),
+                                          fit: BoxFit.cover)),
+                                  //  child: Align(alignment: Alignment.centerLeft, child: Image.asset( height: 100,"assets/image/cake2.webp"))
+                                ),
+                              ),
+                              Container(
                                 height: height * .12,
-                                width: width * .4,
-
+                                width: width * .9,
+                          
+                                // foregroundDecoration: BoxDecoration(),
+                          
                                 decoration: BoxDecoration(
-                                    // border: Border.all(),
+                                    // image: DecorationImage( image: AssetImage("assets/image/cake2.webp",) ,alignment:Alignment.centerLeft, ),
+                          
+                                    // gradient: LinearGradient(begin: Alignment.topLeft,end: Alignment.bottomRight, colors: [ColorConstant.primaryColor,ColorConstant.primaryColor,ColorConstant.secondaryColor]),
                                     borderRadius:
-                                        BorderRadius.circular(width * .05),
-                                    image: DecorationImage(
-                                        image: AssetImage(
-                                          Categorys[index]["Category_image"],
-                                        ),
-                                        fit: BoxFit.cover)),
-                                //  child: Align(alignment: Alignment.centerLeft, child: Image.asset( height: 100,"assets/image/cake2.webp"))
-                              ),
-                            ),
-                            Container(
-                              height: height * .12,
-                              width: width * .9,
-
-                              // foregroundDecoration: BoxDecoration(),
-
-                              decoration: BoxDecoration(
-                                  // image: DecorationImage( image: AssetImage("assets/image/cake2.webp",) ,alignment:Alignment.centerLeft, ),
-
-                                  // gradient: LinearGradient(begin: Alignment.topLeft,end: Alignment.bottomRight, colors: [ColorConstant.primaryColor,ColorConstant.primaryColor,ColorConstant.secondaryColor]),
+                                        BorderRadius.circular(width * .05)),
+                          
+                                foregroundDecoration: BoxDecoration(
                                   borderRadius:
-                                      BorderRadius.circular(width * .05)),
-
-                              foregroundDecoration: BoxDecoration(
-                                borderRadius:
-                                    BorderRadius.circular(width * .05),
-                                gradient: LinearGradient(
-                                    begin: Alignment.bottomLeft,
-                                    end: Alignment.topRight,
-                                    colors: [
-                                      ColorConstant.secondaryColor,
-                                      ColorConstant.secondaryColor,
-                                      ColorConstant.secondaryColor,
-                                      ColorConstant.secondaryColor,
-                                      Colors.transparent,
-                                      Colors.transparent,
-                                    ]),
+                                      BorderRadius.circular(width * .05),
+                                  gradient: LinearGradient(
+                                      begin: Alignment.bottomLeft,
+                                      end: Alignment.topRight,
+                                      colors: [
+                                        ColorConstant.secondaryColor,
+                                        ColorConstant.secondaryColor,
+                                        ColorConstant.secondaryColor,
+                                        ColorConstant.secondaryColor,
+                                        Colors.transparent,
+                                        Colors.transparent,
+                                      ]),
+                                ),
                               ),
-                            ),
-                            Align(
-                                alignment: Alignment.bottomLeft,
-                                child: Padding(
-                                  padding: EdgeInsets.only(
-                                      left: width * .03, top: height * .07),
-                                  child: Text(
-                                    Categorys[index]["Category_name"],
-                                    style: TextStyle(
-                                        fontSize: height * .035,
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.w600),
-                                  ),
-                                ))
-                            //   decoration: BoxDecoration(color: Colors.white,
-                            //     borderRadius: BorderRadius.circular(20),
-                            //   ),
-                            //   child: ShaderMask(
-                            //     shaderCallback: (Rect bounds) {
-                            //       return RadialGradient(
-                            //         center: Alignment.center,
-                            //         radius: 0.8,
-                            //         colors: [
-                            //           Colors.transparent,
-                            //           Colors.black,
-                            //         ],
-                            //         stops: [0.4, 1.0],
-                            //       ).createShader(bounds);
-                            //     },
-                            //     blendMode: BlendMode.dstIn,
-                            //     child: Image.asset("assets/image/cake2.webp",),
-                            //     // child: Image.network(
-                            //     //   'https://via.placeholder.com/300', // Replace with your image URL
-                            //     //   fit: BoxFit.cover,
-                            //     // ),
-                            //   ),
-                            // )
-                          ],
+                              Align(
+                                  alignment: Alignment.bottomLeft,
+                                  child: Padding(
+                                    padding: EdgeInsets.only(
+                                        left: width * .03, top: height * .07),
+                                    child: Text(
+                                      Categorys[index]["Category_name"],
+                                      style: TextStyle(
+                                          fontSize: height * .035,
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.w600),
+                                    ),
+                                  ))
+                              //   decoration: BoxDecoration(color: Colors.white,
+                              //     borderRadius: BorderRadius.circular(20),
+                              //   ),
+                              //   child: ShaderMask(
+                              //     shaderCallback: (Rect bounds) {
+                              //       return RadialGradient(
+                              //         center: Alignment.center,
+                              //         radius: 0.8,
+                              //         colors: [
+                              //           Colors.transparent,
+                              //           Colors.black,
+                              //         ],
+                              //         stops: [0.4, 1.0],
+                              //       ).createShader(bounds);
+                              //     },
+                              //     blendMode: BlendMode.dstIn,
+                              //     child: Image.asset("assets/image/cake2.webp",),
+                              //     // child: Image.network(
+                              //     //   'https://via.placeholder.com/300', // Replace with your image URL
+                              //     //   fit: BoxFit.cover,
+                              //     // ),
+                              //   ),
+                              // )
+                            ],
+                          ),
                         ),
                       );
               },
