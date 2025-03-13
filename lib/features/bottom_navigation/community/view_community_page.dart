@@ -13,28 +13,60 @@ class CommunityViewPage extends StatefulWidget {
 
 class _CommunityViewPageState extends State<CommunityViewPage> {
   bool like = false;
-
+  TextEditingController searchController = TextEditingController();
+  bool isSearching = false;
+  final TextEditingController searchController1 = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        surfaceTintColor: ColorConstant.backgroundColor,
         backgroundColor: ColorConstant.backgroundColor,
         leading: GestureDetector(
-            onTap: () {
+          onTap: () {
+            if (isSearching) {
+              setState(() {
+                isSearching = false;
+                searchController1.clear();
+              });
+            } else {
               Navigator.pop(context);
-            },
-            child: Icon(
-              Icons.arrow_back_ios,
-              color: ColorConstant.thirdColor,
-              size: width * 0.08,
-            )),
-        actions: [
-          Icon(
-            Icons.search,
+            }
+          },
+          child: Icon(
+            isSearching ? Icons.close : Icons.arrow_back_ios,
             color: ColorConstant.thirdColor,
             size: width * 0.08,
           ),
-        ],
+        ),
+        title: isSearching
+            ? TextFormField(
+          controller: searchController1,
+          autofocus: true,
+          style: TextStyle(color: ColorConstant.thirdColor),
+          decoration: InputDecoration(
+            hintText: "Search...",
+            hintStyle: TextStyle(color: ColorConstant.thirdColor),
+            border: InputBorder.none,
+          ),
+        )
+            : Spacer(),
+        actions: !isSearching
+            ? [
+          GestureDetector(
+            onTap: () {
+              setState(() {
+                isSearching = true;
+              });
+            },
+            child: Icon(
+              Icons.search,
+              color: ColorConstant.thirdColor,
+              size: width * 0.08,
+            ),
+          ),
+        ]
+            : [],
       ),
       body: Stack(
         children: [
@@ -137,20 +169,7 @@ class _CommunityViewPageState extends State<CommunityViewPage> {
                   SizedBox(
                     height: width * 0.02,
                   ),
-                  Container(
-                    height: height * 0.05,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(width * 0.01),
-                      color: ColorConstant.backgroundColor,
-                      border: Border.all(color: ColorConstant.primaryColor),
-                    ),
-                    child: Center(
-                      child: Text(
-                        "Reply",
-                        style: TextStyle(color: ColorConstant.primaryColor),
-                      ),
-                    ),
-                  ),
+
                   Row(
                     children: [
                       Text(
@@ -282,7 +301,7 @@ class _CommunityViewPageState extends State<CommunityViewPage> {
             alignment: Alignment.bottomCenter,
             child: Container(
               width: width * 1,
-              height: height * 0.09,
+              height: height * 0.07,
               decoration: BoxDecoration(
                 color: ColorConstant.backgroundColor,
                 borderRadius: BorderRadius.only(
@@ -291,12 +310,50 @@ class _CommunityViewPageState extends State<CommunityViewPage> {
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: ColorConstant.thirdColor.withOpacity(0.6),
-                    blurRadius: 7,
-                    spreadRadius: 4,
-                    offset: Offset(0, 3),
+                    color: ColorConstant.thirdColor.withOpacity(0.3),
+                    blurRadius: 4,
+                    spreadRadius: 3,
+                    offset: Offset(0,0),
                   ),
                 ],
+              ),
+              child: Padding(
+                padding: EdgeInsets.all(width * 0.02),
+                child: Row(
+                  children: [
+                    CircleAvatar(
+                      radius: width * 0.06,
+                      backgroundImage: AssetImage(ImageConstant.car),
+                    ),
+                    Expanded(
+                      child: TextFormField(
+                        decoration: InputDecoration(
+
+                          hintText: "Add a comment for.......",
+                          hintStyle: TextStyle(
+                              color: Colors.black54,
+                              fontSize: width*0.04,
+                              fontWeight: FontWeight.w600),
+
+                          filled: true,
+                          fillColor: Colors.white,
+enabledBorder:OutlineInputBorder(
+    borderRadius:
+    BorderRadius.circular(width * .03),
+    borderSide: BorderSide.none,
+    // BorderSide(color: ColorConstant.primaryColor, width: width * .006),
+    ) ,
+                          focusedBorder: OutlineInputBorder(
+                            borderRadius:
+                            BorderRadius.circular(width * .03),
+                            borderSide: BorderSide.none,
+                            // BorderSide(color: ColorConstant.primaryColor, width: width * .006),
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
               ),
             ),
           ),

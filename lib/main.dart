@@ -18,21 +18,17 @@ late double width;
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  runApp(DevicePreview(
-      enabled: kDebugMode,
-      tools: const [
-        ...DevicePreview.defaultTools,
-      ],
-      builder: (context) =>  EventAPP()));
+  // runApp(DevicePreview(
+  //     enabled: kDebugMode,
+  //     tools: const [
+  //       ...DevicePreview.defaultTools,
+  //     ],
+  //     builder: (context) =>  EventAPP()));
+
+
+  runApp(EventAPP());
 }
-// void main(){
-//   runApp(DevicePreview(
-//     enabled: kDebugMode,
-//       tools: const [
-//         ...DevicePreview.defaultTools,
-//       ],
-//       builder: (context) =>  EventAPP()));
-// }
+
 class EventAPP extends StatelessWidget {
   const EventAPP({super.key});
 
