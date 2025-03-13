@@ -1,10 +1,17 @@
-import 'package:eventify001/constants/color_constant.dart';
+import 'package:eventify001/features/bottom_navigation/profile/profile_page.dart';
+import 'package:eventify001/main.dart';
 import 'package:flutter/material.dart';
 
-import '../../../main.dart';
+import '../../../constants/color_constant.dart';
 
-class ProfilePage extends StatelessWidget {
-  const ProfilePage({super.key});
+class UsersProfilePage extends StatefulWidget {
+  const UsersProfilePage({super.key});
+
+  @override
+  State<UsersProfilePage> createState() => _UsersProfilePageState();
+}
+
+class _UsersProfilePageState extends State<UsersProfilePage> {
   @override
   Widget build(BuildContext context) {
     List<Map<String, String>> highlights = [
@@ -15,8 +22,8 @@ class ProfilePage extends StatelessWidget {
       {"image": "https://via.placeholder.com/150", "title": "Work"},
       {"image": "https://via.placeholder.com/150", "title": "Work"},
     ];
-     height = MediaQuery.of(context).size.height;
-     width = MediaQuery.of(context).size.width;
+    height = MediaQuery.of(context).size.height;
+    width = MediaQuery.of(context).size.width;
     return DefaultTabController(
       length: 2,
       child: Scaffold(
@@ -51,7 +58,7 @@ class ProfilePage extends StatelessWidget {
                       top: height * 0.08,
                       left: 20,
                       child:
-                          Icon(Icons.arrow_back, color: Colors.white, size: 28),
+                      Icon(Icons.arrow_back, color: Colors.white, size: 28),
                     ),
                     SizedBox(
                       height: height * 0.25,
@@ -122,7 +129,7 @@ class ProfilePage extends StatelessWidget {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(width * 0.03),
                             border:
-                                Border.all(color: ColorConstant.primaryColor)),
+                            Border.all(color: ColorConstant.primaryColor)),
                         child: Center(
                           child: Text("Share profile",
                               style: TextStyle(
@@ -178,12 +185,12 @@ class ProfilePage extends StatelessWidget {
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
                                 border:
-                                    Border.all(color: Colors.pink, width: 2),
+                                Border.all(color: Colors.pink, width: 2),
                               ),
                               child: CircleAvatar(
                                 radius: 30,
                                 backgroundImage:
-                                    NetworkImage(highlights[index]["image"]!),
+                                NetworkImage(highlights[index]["image"]!),
                               ),
                             ),
                             SizedBox(height: 5),
@@ -207,21 +214,3 @@ class ProfilePage extends StatelessWidget {
     );
   }
 }
-
-class BottomInsideCurveClipper extends CustomClipper<Path> {
-  @override
-  Path getClip(Size size) {
-    Path path = Path();
-    path.lineTo(0, size.height);
-    path.quadraticBezierTo(
-        size.width * 0.5, size.height - 100, size.width, size.height);
-    path.lineTo(size.width, 0);
-    path.close();
-    return path;
-  }
-
-  @override
-  bool shouldReclip(CustomClipper<Path> oldClipper) => false;
-}
-
-
