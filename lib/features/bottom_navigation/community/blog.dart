@@ -1,12 +1,13 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:eventify001/constants/color_constant.dart';
-import 'package:eventify001/constants/image_constant.dart';
+
 import 'package:eventify001/features/bottom_navigation/community/view_blog_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:line_icons/line_icon.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
+import '../../../core/constants/color_constant.dart';
+import '../../../core/constants/image_constant.dart';
 import '../../../main.dart';
 import 'clip_rect.dart';
 

@@ -2,7 +2,8 @@ import 'package:eventify001/features/bottom_navigation/profile/profile_page.dart
 import 'package:eventify001/main.dart';
 import 'package:flutter/material.dart';
 
-import '../../../constants/color_constant.dart';
+import '../../../core/constants/color_constant.dart';
+
 
 class UsersProfilePage extends StatefulWidget {
   const UsersProfilePage({super.key});

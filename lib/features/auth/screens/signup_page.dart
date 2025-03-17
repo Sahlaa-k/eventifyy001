@@ -1,17 +1,20 @@
-import 'package:eventify001/constants/color_constant.dart';
-import 'package:eventify001/features/bottom_navigation/bottom_navigation_bar.dart';
-import 'package:eventify001/features/login/signup_page.dart';
-import 'package:eventify001/main.dart';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-class SetpasswordPage extends StatefulWidget {
-  const SetpasswordPage({super.key});
+
+
+import '../../../core/constants/color_constant.dart';
+import '../../../main.dart';
+import '../../bottom_navigation/bottom_navigation_bar.dart';
+import 'SetPassword_page.dart';
+class SignupPage extends StatefulWidget {
+  const SignupPage({super.key});
 
   @override
-  State<SetpasswordPage> createState() => _SetpasswordPageState();
+  State<SignupPage> createState() => _SignupPageState();
 }
 
-class _SetpasswordPageState extends State<SetpasswordPage> {
+class _SignupPageState extends State<SignupPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,17 +61,17 @@ class _SetpasswordPageState extends State<SetpasswordPage> {
                 // mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  SizedBox(height: height*.4,),
+                  SizedBox(height: height*.35,),
                   Padding(
                     padding:
                         EdgeInsets.only(left: width * .08, right: width * .08,bottom: width * .08),
                     child: TextFormField(
                       decoration: InputDecoration(
                         // labelText: 'Enter your text',
-                        hintText: 'Enter a Password',
+                        hintText: 'Enter a Username',
                         hintStyle: TextStyle(
                             color: Colors.black54, fontWeight: FontWeight.w600),
-                        prefixIcon: Icon(Icons.password),
+                        prefixIcon: Icon(Icons.account_circle_outlined),
                         // suffixIcon: Icon(Icons.check_circle, color: Colors.green),
                         filled: true,
                         fillColor: Colors.white,
@@ -91,10 +94,10 @@ class _SetpasswordPageState extends State<SetpasswordPage> {
                     child: TextFormField(
                       decoration: InputDecoration(
                         // labelText: 'Enter your text',
-                        hintText: 'Enter a Confirm Password',
+                        hintText: 'Enter a Mobile or E-mail',
                         hintStyle: TextStyle(
                             color: Colors.black54, fontWeight: FontWeight.w600),
-                        prefixIcon: Icon(Icons.password),
+                        prefixIcon: Icon(Icons.mail_outline_outlined),
                         // suffixIcon: Icon(Icons.check_circle, color: Colors.green),
                         filled: true,
                         fillColor: Colors.white,
@@ -113,7 +116,7 @@ class _SetpasswordPageState extends State<SetpasswordPage> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => BottomNavigationPage(),));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => SetpasswordPage(),));
                     },
                     child: Container(
                       height: height*.06,
@@ -122,11 +125,26 @@ class _SetpasswordPageState extends State<SetpasswordPage> {
                         color: ColorConstant.primaryColor,
                         borderRadius: BorderRadius.circular(width*.02)
                       ),
-                      child: Center(child: Text("Sign Up",style: GoogleFonts.poppins(color: Colors.white,fontSize: height*.02,fontWeight: FontWeight.w500),),),
+                      child: Center(child: Text("Proceed",style: GoogleFonts.poppins(color: Colors.white,fontSize: height*.02,fontWeight: FontWeight.w500),),),
                     ),
                   ),
-                  // SizedBox(height: height*.2,),
-                  
+                  SizedBox(height: height*.2,),
+                  Row(mainAxisAlignment: MainAxisAlignment.center,
+
+                    children: [
+                      Text("Have an account",style: TextStyle(fontSize: height*.02,fontWeight: FontWeight.w600),),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => SignupPage(),));
+                        },
+                        child: Padding(
+                          padding: EdgeInsets.all(width*.015),
+                          child: Text("Login",style: TextStyle(color: ColorConstant.primaryColor, fontSize: height*.02,fontWeight: FontWeight.w600),),
+                        ),
+                      ),
+
+                    ],
+                  )
                 ],
               ),
             ],

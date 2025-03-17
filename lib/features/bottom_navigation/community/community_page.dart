@@ -1,11 +1,10 @@
-import 'package:eventify001/constants/icon_constant.dart';
 import 'package:eventify001/features/bottom_navigation/community/community.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:line_icons/line_icon.dart';
 
-import '../../../constants/color_constant.dart';
-import '../../../constants/image_constant.dart';
+
+import '../../../core/constants/color_constant.dart';
 import '../../../main.dart';
 import 'blog.dart';
 

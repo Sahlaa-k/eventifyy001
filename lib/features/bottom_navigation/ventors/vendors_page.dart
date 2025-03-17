@@ -1,11 +1,13 @@
-import 'package:eventify001/constants/color_constant.dart';
-import 'package:eventify001/constants/image_constant.dart';
+
 import 'package:eventify001/features/bottom_navigation/ventors/vendorView_page.dart';
 import 'package:eventify001/features/bottom_navigation/ventors/vendor_sample.dart';
 import 'package:eventify001/main.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+
+import '../../../core/constants/color_constant.dart';
+import '../../../core/constants/image_constant.dart';
 
 class VendorsPage extends StatefulWidget {
   

@@ -1,8 +1,9 @@
 
 import 'package:flutter/material.dart';
 
-import '../../constants/color_constant.dart';
-import '../../constants/image_constant.dart';
+
+import '../../core/constants/color_constant.dart';
+import '../../core/constants/image_constant.dart';
 import '../../main.dart';
 
 class onBoarding3 extends StatefulWidget {

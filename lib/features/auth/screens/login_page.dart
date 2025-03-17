@@ -1,26 +1,32 @@
 
-import 'package:eventify001/features/login/SetPassword_page.dart';
+import 'package:eventify001/core/constants/icon_constant.dart';
+import 'package:eventify001/features/auth/screens/signup_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../constants/color_constant.dart';
-import '../../main.dart';
-import '../bottom_navigation/bottom_navigation_bar.dart';
-class SignupPage extends StatefulWidget {
-  const SignupPage({super.key});
+
+import '../../../core/constants/color_constant.dart';
+import '../../../main.dart';
+import '../../bottom_navigation/bottom_navigation_bar.dart';
+import 'otp_verification.dart';
+
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
 
   @override
-  State<SignupPage> createState() => _SignupPageState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _SignupPageState extends State<SignupPage> {
+class _LoginPageState extends State<LoginPage> {
+  bool reLock=false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorConstant.backgroundColor,
       body: SingleChildScrollView(
         child: SizedBox(
-          width: width *  1.5,
+          width: width * 1.5,
           height: height * 1,
           child: Stack(
             children: [
@@ -65,12 +71,14 @@ class _SignupPageState extends State<SignupPage> {
                     padding:
                         EdgeInsets.only(left: width * .08, right: width * .08,bottom: width * .08),
                     child: TextFormField(
+                     
                       decoration: InputDecoration(
+
                         // labelText: 'Enter your text',
-                        hintText: 'Enter a Username',
+                        hintText: 'Enter Mobile or E-mail',
                         hintStyle: TextStyle(
                             color: Colors.black54, fontWeight: FontWeight.w600),
-                        prefixIcon: Icon(Icons.account_circle_outlined),
+                        prefixIcon: Icon(Icons.mail_outline_outlined),
                         // suffixIcon: Icon(Icons.check_circle, color: Colors.green),
                         filled: true,
                         fillColor: Colors.white,
@@ -91,12 +99,23 @@ class _SignupPageState extends State<SignupPage> {
                     padding:
                         EdgeInsets.only(left: width * .08, right: width * .08,bottom: width * .2),
                     child: TextFormField(
+                      obscureText: reLock ? true : false,
                       decoration: InputDecoration(
+
                         // labelText: 'Enter your text',
-                        hintText: 'Enter a Mobile or E-mail',
+                        hintText: 'Enter your Password',
                         hintStyle: TextStyle(
                             color: Colors.black54, fontWeight: FontWeight.w600),
-                        prefixIcon: Icon(Icons.mail_outline_outlined),
+                        prefixIcon: GestureDetector(
+                          onTap: () {
+                    reLock = !reLock;
+                    setState(() {});
+                    },
+                      child: Padding(
+                        padding: EdgeInsets.all(width * 0.02),
+                        child: Icon(reLock?Icons.visibility_off:Icons.visibility),
+                      ),
+                    ),
                         // suffixIcon: Icon(Icons.check_circle, color: Colors.green),
                         filled: true,
                         fillColor: Colors.white,
@@ -115,30 +134,72 @@ class _SignupPageState extends State<SignupPage> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => SetpasswordPage(),));
+                      Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => BottomNavigationPage(),),(route) => false,);
                     },
                     child: Container(
                       height: height*.06,
                       width: width*.7,
                       decoration: BoxDecoration(
+
                         color: ColorConstant.primaryColor,
                         borderRadius: BorderRadius.circular(width*.02)
                       ),
-                      child: Center(child: Text("Proceed",style: GoogleFonts.poppins(color: Colors.white,fontSize: height*.02,fontWeight: FontWeight.w500),),),
+                      child: Center(child: Text("LogIn",style: GoogleFonts.poppins(color: Colors.white,fontSize: height*.02,fontWeight: FontWeight.w500),),),
                     ),
                   ),
-                  SizedBox(height: height*.2,),
-                  Row(mainAxisAlignment: MainAxisAlignment.center,
+                  SizedBox(height: height*.02,),
+
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => OtpVerification(),));
+                    },
+                    child: Container(
+                      height: height*.06,
+                      width: width*.7,
+                      decoration: BoxDecoration(
+                        border: Border.all(color: ColorConstant.primaryColor,width: width*0.004),
+                        color: ColorConstant.backgroundColor,
+                        borderRadius: BorderRadius.circular(width*.02)
+                      ),
+                      child: Center(child: Text("OTP sign in",style: GoogleFonts.poppins(color: ColorConstant.primaryColor,fontSize: height*.02,fontWeight: FontWeight.w500),),),
+                    ),
+                  ), SizedBox(height: height*.02,),
+                  Container(
+                    height: height*.06,
+                    width: width*.7,
+                    decoration: BoxDecoration(
+border: Border.all(color: ColorConstant.primaryColor,width: width*0.004),
+                        color: ColorConstant.backgroundColor,
+                        borderRadius: BorderRadius.circular(width*.02)
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+
+                        SvgPicture.asset(IconConstant.google,width: width*0.07,),
+                        Text("Sign in with Google",style: GoogleFonts.poppins(color: ColorConstant.primaryColor,fontSize: height*.02,fontWeight: FontWeight.w500),),
+                      ],
+                    ),
+                  ),
+
+                  SizedBox(height: height*.15,),
+                  
+                  Row  (mainAxisAlignment: MainAxisAlignment.center,
 
                     children: [
-                      Text("Have an account",style: TextStyle(fontSize: height*.02,fontWeight: FontWeight.w600),),
+                      Text("Don't have an account",style: TextStyle(fontSize: height*.02,fontWeight: FontWeight.w600),),
                       GestureDetector(
                         onTap: () {
                           Navigator.push(context, MaterialPageRoute(builder: (context) => SignupPage(),));
                         },
                         child: Padding(
                           padding: EdgeInsets.all(width*.015),
-                          child: Text("Login",style: TextStyle(color: ColorConstant.primaryColor, fontSize: height*.02,fontWeight: FontWeight.w600),),
+                          child: GestureDetector(
+                              onTap: () {
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => SignupPage(),));
+
+                              },
+                              child: Text("Create Now",style: TextStyle(color: ColorConstant.primaryColor, fontSize: height*.02,fontWeight: FontWeight.w600),)),
                         ),
                       ),
 

@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 
-import '../../constants/color_constant.dart';
-import '../../constants/icon_constant.dart';
+import '../../core/constants/color_constant.dart';
+import '../../core/constants/icon_constant.dart';
 import '../../main.dart';
 import 'blog/blog_page.dart';
 import 'community/community_page.dart';

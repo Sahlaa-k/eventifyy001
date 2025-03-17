@@ -1,8 +1,9 @@
-import 'package:eventify001/constants/color_constant.dart';
 import 'package:eventify001/main.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:line_icons/line_icon.dart';
+
+import '../../../core/constants/color_constant.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

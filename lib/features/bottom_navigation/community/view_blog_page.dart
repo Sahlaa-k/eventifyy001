@@ -1,9 +1,9 @@
-import 'package:eventify001/constants/color_constant.dart';
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icon.dart';
 import 'package:line_icons/line_icons.dart';
 
-import '../../../constants/image_constant.dart';
+import '../../../core/constants/color_constant.dart';
+import '../../../core/constants/image_constant.dart';
 import '../../../main.dart';
 
 class ViewBlogPage extends StatefulWidget {

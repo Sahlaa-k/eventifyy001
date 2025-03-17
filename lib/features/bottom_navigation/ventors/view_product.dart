@@ -1,9 +1,11 @@
-import 'package:eventify001/constants/color_constant.dart';
-import 'package:eventify001/constants/image_constant.dart';
+
 import 'package:eventify001/main.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:line_icons/line_icon.dart';
+
+import '../../../core/constants/color_constant.dart';
+import '../../../core/constants/image_constant.dart';
 
 class ViewProduct extends StatefulWidget {
   final Map<String, dynamic> product;

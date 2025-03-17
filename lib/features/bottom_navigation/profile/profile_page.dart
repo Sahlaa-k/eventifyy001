@@ -1,6 +1,6 @@
-import 'package:eventify001/constants/color_constant.dart';
 import 'package:flutter/material.dart';
 
+import '../../../core/constants/color_constant.dart';
 import '../../../main.dart';
 
 class ProfilePage extends StatelessWidget {

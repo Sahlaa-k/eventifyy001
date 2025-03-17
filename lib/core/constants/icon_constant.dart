@@ -7,4 +7,5 @@ class IconConstant{
   static const saveIcon="assets/icons/save_icon.svg";
   static const searchIcon ="assets/icons/search_icon.svg";
   static const vendor="assets/icons/vendor.svg";
+  static const google="assets/icons/google-icon.svg";
 }

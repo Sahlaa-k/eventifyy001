@@ -9,7 +9,6 @@ import 'features/bottom_navigation/blog/blog_page.dart';
 import 'features/bottom_navigation/bottom_navigation_bar.dart';
 import 'features/bottom_navigation/community/view_blog_page.dart';
 import 'features/bottom_navigation/profile/profile_page.dart';
-import 'features/login/login_page.dart';
 import 'features/onboarding_screen/onboarding_page1.dart';
 import 'features/onboarding_screen/splash_screen.dart';
 import 'firebase_options.dart';
@@ -18,15 +17,15 @@ late double width;
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  // runApp(DevicePreview(
-  //     enabled: kDebugMode,
-  //     tools: const [
-  //       ...DevicePreview.defaultTools,
-  //     ],
-  //     builder: (context) =>  EventAPP()));
+  runApp(DevicePreview(
+      enabled: kDebugMode,
+      tools: const [
+        ...DevicePreview.defaultTools,
+      ],
+      builder: (context) =>  EventAPP()));
 
 
-  runApp(EventAPP());
+ // runApp(EventAPP());
 }
 
 class EventAPP extends StatelessWidget {

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-import '../../constants/color_constant.dart';
-import '../../constants/image_constant.dart';
+
+import '../../core/constants/color_constant.dart';
 import '../../main.dart';
-import '../login/login_page.dart';
+import '../auth/screens/login_page.dart';
 import 'onboarding_page1.dart';
 import 'onboarding_page2.dart';
 import 'onboarding_page3.dart';
