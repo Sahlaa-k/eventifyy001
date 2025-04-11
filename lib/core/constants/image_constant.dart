@@ -16,4 +16,6 @@ class ImageConstant {
   static const table = "assets/image/tabletable.jpeg";
 
   static const catering = "assets/image/catering2.jpeg";
+  static const Ai = "assets/image/AI.jpg";
+
 }

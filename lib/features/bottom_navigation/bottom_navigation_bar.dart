@@ -8,8 +8,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../core/constants/color_constant.dart';
 import '../../core/constants/icon_constant.dart';
+import '../../core/constants/image_constant.dart';
 import '../../main.dart';
-import 'blog/blog_page.dart';
+
 import 'community/community_page.dart';
 import 'home/home_page.dart';
 
@@ -26,7 +27,7 @@ class _BottomNavigationPageState extends State<BottomNavigationPage> {
     HomePage(),
     VendorsPage(),
     CommunityPage(),
-    BlogPage(),
+
     ProfilePage(),
   ];
 
@@ -46,38 +47,31 @@ class _BottomNavigationPageState extends State<BottomNavigationPage> {
             height: width * 0.09,
             color:  selectIndex == 0
                 ? ColorConstant.backgroundColor // Pink for selected
-                : ColorConstant.secondaryColor,
+                : ColorConstant.backgroundColor,
           ),
           SvgPicture.asset(
             IconConstant.vendor,
             height: width * 0.09,
             color: selectIndex == 1
                 ? ColorConstant.backgroundColor // Pink for selected
-                :ColorConstant.secondaryColor,
+                :ColorConstant.backgroundColor,
           ),
           SvgPicture.asset(
             IconConstant.communityIcon,
             height: width * 0.09,
             color:  selectIndex == 2
                 ? ColorConstant.backgroundColor // Pink for selected
-                : ColorConstant.secondaryColor,
-          ),
-          SvgPicture.asset(
-            IconConstant.blogIcon,
-            height: width * 0.09,
-            color:  selectIndex == 3
-                ? ColorConstant.backgroundColor // Pink for selected
-                : ColorConstant.secondaryColor,
+                : ColorConstant.backgroundColor,
           ),
           SvgPicture.asset(
             IconConstant.profileIcon,
             height: width * 0.09,
             color:  selectIndex == 4
                 ? ColorConstant.backgroundColor // Pink for selected
-                : ColorConstant.secondaryColor,
+                : ColorConstant.backgroundColor,
           ),
         ],
-        color: ColorConstant.backgroundColor, // No fixed color for navigation bar
+        color: ColorConstant.primaryColor, // No fixed color for navigation bar
         buttonBackgroundColor: ColorConstant.primaryColor, // Matches page background
         backgroundColor: Colors.transparent, // Makes the navigation bar float
         animationCurve: Curves.easeInOut,
@@ -92,6 +86,22 @@ class _BottomNavigationPageState extends State<BottomNavigationPage> {
 
       ),
       body: pages[selectIndex],
+      floatingActionButton:  FloatingActionButton(
+          onPressed: () {
+            // Navigator.push(
+            //     context,
+            //     MaterialPageRoute(
+            //       builder: (context) => AddUserPage(),
+            //     ));
+          },
+          shape: CircleBorder(),
+          backgroundColor: ColorConstant.primaryColor,
+
+          child: CircleAvatar(
+            radius: width*0.065,
+            backgroundImage: AssetImage(ImageConstant.Ai,),
+          )
+      ),
     );
   }
 }

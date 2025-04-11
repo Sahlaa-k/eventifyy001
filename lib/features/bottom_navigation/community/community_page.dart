@@ -42,11 +42,11 @@ class _CommunityPageState extends State<CommunityPage> {
                   color: ColorConstant.backgroundColor,
                   size: width * 0.08,
                 )),
-            Icon(
-              Icons.bookmark_border_rounded,
-              color: ColorConstant.backgroundColor,
-              size: width * 0.08,
-            ),
+            // Icon(
+            //   Icons.bookmark_border_rounded,
+            //   color: ColorConstant.backgroundColor,
+            //   size: width * 0.08,
+            // ),
           ],
           backgroundColor: ColorConstant.primaryColor,
         ),

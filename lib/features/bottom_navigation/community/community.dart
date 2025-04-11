@@ -62,225 +62,254 @@ class _CommunityTabState extends State<CommunityTab> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorConstant.backgroundColor,
-      body: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          //mainAxisSize: MainAxisSize.min, // Ensures it doesn’t take infinite height
-          children: [
-            Padding(
-              padding: EdgeInsets.all(width * 0.03),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  // Top Communities Title
-                  Text(
-                    "Top Communities",
-                    style: TextStyle(
-                      color: ColorConstant.primaryColor,
-                      fontWeight: FontWeight.w500,
-                      fontSize: width * 0.06,
-                    ),
-                  ),
-                  SizedBox(height: width * 0.03),
-                  SizedBox(
-                    height: height * 0.13,
-                    child: ListView.separated(
-                      shrinkWrap: true,
-                      physics: BouncingScrollPhysics(),
-                      itemCount: categories.length,
-                      padding: EdgeInsets.all(width * 0.02),
-                      scrollDirection: Axis.horizontal,
-                      itemBuilder: (context, index) {
-                        return Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            CircleAvatar(
-                              backgroundColor: ColorConstant.primaryColor,
-                              radius: width * 0.08,
-                              backgroundImage:
-                                  AssetImage(categories[index]["image"]),
-                            ),
-                            SizedBox(height: 5),
-                            Text(
-                              categories[index]["title"],
-                              style: TextStyle(color: ColorConstant.thirdColor),
-                            ),
-                          ],
-                        );
-                      },
-                      separatorBuilder: (_, __) => SizedBox(width: 20),
-                    ),
-                  ),
-                  SizedBox(height: width * 0.04),
+      body: Stack(
+        children: [
+          SingleChildScrollView(
+            physics: BouncingScrollPhysics(),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              //mainAxisSize: MainAxisSize.min, // Ensures it doesn’t take infinite height
+              children: [
+                Padding(
+                  padding: EdgeInsets.all(width * 0.03),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      // Top Communities Title
+                      Text(
+                        "Top Communities",
+                        style: TextStyle(
+                          color: ColorConstant.primaryColor,
+                          fontWeight: FontWeight.w500,
+                          fontSize: width * 0.06,
+                        ),
+                      ),
+                      SizedBox(height: width * 0.03),
+                      SizedBox(
+                        height: height * 0.13,
+                        child: ListView.separated(
+                          shrinkWrap: true,
+                          physics: BouncingScrollPhysics(),
+                          itemCount: categories.length,
+                          padding: EdgeInsets.all(width * 0.02),
+                          scrollDirection: Axis.horizontal,
+                          itemBuilder: (context, index) {
+                            return Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                CircleAvatar(
+                                  backgroundColor: ColorConstant.primaryColor,
+                                  radius: width * 0.08,
+                                  backgroundImage:
+                                      AssetImage(categories[index]["image"]),
+                                ),
+                                SizedBox(height: 5),
+                                Text(
+                                  categories[index]["title"],
+                                  style: TextStyle(color: ColorConstant.thirdColor),
+                                ),
+                              ],
+                            );
+                          },
+                          separatorBuilder: (_, __) => SizedBox(width: 20),
+                        ),
+                      ),
+                      SizedBox(height: width * 0.04),
 
-                  // What’s on your mind? Post Box
-                  Container(
-                    padding: EdgeInsets.all(width * 0.02),
-                    decoration: BoxDecoration(
-                      border: Border.all(color: ColorConstant.primaryColor),
-                      borderRadius: BorderRadius.circular(width * 0.02),
-                      color: ColorConstant.primaryColor.withOpacity(0.05),
-                    ),
-                    child: Column(
-                      children: [
-                        Row(
+                      // What’s on your mind? Post Box
+                      Container(
+                        padding: EdgeInsets.all(width * 0.02),
+                        decoration: BoxDecoration(
+                          border: Border.all(color: ColorConstant.primaryColor),
+                          borderRadius: BorderRadius.circular(width * 0.02),
+                          color: ColorConstant.primaryColor.withOpacity(0.05),
+                        ),
+                        child: Column(
                           children: [
-                            CircleAvatar(
-                              backgroundColor: ColorConstant.primaryColor,
-                              radius: width * 0.05,
-                              backgroundImage:
-                                  AssetImage(ImageConstant.dance_singer),
+                            Row(
+                              children: [
+                                CircleAvatar(
+                                  backgroundColor: ColorConstant.primaryColor,
+                                  radius: width * 0.05,
+                                  backgroundImage:
+                                      AssetImage(ImageConstant.dance_singer),
+                                ),
+                                SizedBox(width: width * 0.02),
+                                Expanded(
+                                  child: Text(
+                                    "What do you think right now?",
+                                    style: TextStyle(
+                                      color: ColorConstant.primaryColor,
+                                      fontSize: width * 0.045,
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
-                            SizedBox(width: width * 0.02),
-                            Expanded(
+                            Align(
+                              alignment: Alignment.centerRight,
                               child: Text(
-                                "What do you think right now?",
+                                "Post",
                                 style: TextStyle(
                                   color: ColorConstant.primaryColor,
-                                  fontSize: width * 0.045,
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: width * 0.055,
                                 ),
                               ),
                             ),
                           ],
                         ),
-                        Align(
-                          alignment: Alignment.centerRight,
-                          child: Text(
-                            "Post",
-                            style: TextStyle(
-                              color: ColorConstant.primaryColor,
-                              fontWeight: FontWeight.w500,
-                              fontSize: width * 0.055,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                      ),
 
-                  SizedBox(
-                    height: width * 0.03,
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => CommunityViewPage(),
-                          ));
-                    },
-                    child: ListView.separated(
-                      itemCount: 4,
-                      shrinkWrap: true,
-                      physics: NeverScrollableScrollPhysics(),
-                      itemBuilder: (BuildContext context, int index) {
-                        return Container(
-                          padding: EdgeInsets.all(width * 0.02),
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(width * 0.03),
-                            boxShadow: [
-                              BoxShadow(
-                                color:
-                                    ColorConstant.thirdColor.withOpacity(0.3),
-                                blurRadius: 3,
-                                spreadRadius: 1,
-                                offset: Offset(0, 3),
-                              ),
-                            ],
-                          ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                children: [
-                                  CircleAvatar(
-                                    radius: width * 0.045,
-                                    backgroundImage:
-                                        AssetImage(ImageConstant.car),
+                      SizedBox(
+                        height: width * 0.03,
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => CommunityViewPage(),
+                              ));
+                        },
+                        child: ListView.separated(
+                          itemCount: 4,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (BuildContext context, int index) {
+                            return Container(
+                              padding: EdgeInsets.all(width * 0.02),
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(width * 0.03),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color:
+                                        ColorConstant.thirdColor.withOpacity(0.3),
+                                    blurRadius: 3,
+                                    spreadRadius: 1,
+                                    offset: Offset(0, 3),
                                   ),
-                                  SizedBox(width: 10),
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                ],
+                              ),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
                                     children: [
-                                      Text(
-                                        "Adison",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: width * 0.04),
+                                      CircleAvatar(
+                                        radius: width * 0.045,
+                                        backgroundImage:
+                                            AssetImage(ImageConstant.car),
                                       ),
+                                      SizedBox(width: 10),
+                                      Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            "Adison",
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: width * 0.04),
+                                          ),
+                                          Text(
+                                            "/Manipal Finance",
+                                            style: TextStyle(
+                                                color: ColorConstant.thirdColor
+                                                    .withOpacity(0.4),
+                                                fontSize: width * 0.023),
+                                          ),
+                                        ],
+                                      ),
+                                      Spacer(),
                                       Text(
-                                        "/Manipal Finance",
+                                        "9:34 AM",
                                         style: TextStyle(
+                                            fontSize: 12,
                                             color: ColorConstant.thirdColor
-                                                .withOpacity(0.4),
-                                            fontSize: width * 0.023),
+                                                .withOpacity(0.4)),
                                       ),
                                     ],
                                   ),
-                                  Spacer(),
+                                  SizedBox(height: 10),
                                   Text(
-                                    "9:34 AM",
-                                    style: TextStyle(
-                                        fontSize: 12,
-                                        color: ColorConstant.thirdColor
-                                            .withOpacity(0.4)),
+                                    "What are some of the best websites to stay updated on financial news?",
+                                    style: TextStyle(fontSize: width * 0.04),
                                   ),
-                                ],
-                              ),
-                              SizedBox(height: 10),
-                              Text(
-                                "What are some of the best websites to stay updated on financial news?",
-                                style: TextStyle(fontSize: width * 0.04),
-                              ),
-                              SizedBox(height: 10),
-                              Row(
-                                children: [
-                                  InkWell(
-                                    onTap: () {
-                                      like = !like;
-                                      setState(() {});
-                                    },
-                                    child: Icon(
-                                        like
-                                            ? Icons.favorite_border
-                                            : Icons.favorite,
-                                        color: ColorConstant.primaryColor),
+                                  SizedBox(height: 10),
+                                  Row(
+                                    children: [
+                                      InkWell(
+                                        onTap: () {
+                                          like = !like;
+                                          setState(() {});
+                                        },
+                                        child: Icon(
+                                            like
+                                                ? Icons.favorite_border
+                                                : Icons.favorite,
+                                            color: ColorConstant.primaryColor),
+                                      ),
+                                      SizedBox(width: 8),
+                                      Text("12"),
+                                      Spacer(),
+                                      IconButton(
+                                        icon: Icon(Icons.chat_bubble_outline),
+                                        onPressed: () {},
+                                      ),
+                                      Text("6"),
+                                      SizedBox(width: 8),
+                                      IconButton(
+                                        icon: Icon(Icons.share),
+                                        onPressed: () {},
+                                      ),
+                                      IconButton(
+                                        icon: Icon(Icons.more_vert),
+                                        onPressed: () {},
+                                      ),
+                                    ],
                                   ),
-                                  SizedBox(width: 8),
-                                  Text("12"),
-                                  Spacer(),
-                                  IconButton(
-                                    icon: Icon(Icons.chat_bubble_outline),
-                                    onPressed: () {},
-                                  ),
-                                  Text("6"),
-                                  SizedBox(width: 8),
-                                  IconButton(
-                                    icon: Icon(Icons.share),
-                                    onPressed: () {},
-                                  ),
-                                  IconButton(
-                                    icon: Icon(Icons.more_vert),
-                                    onPressed: () {},
-                                  ),
+
                                 ],
                               ),
 
-                            ],
-                          ),
-
-                        );
-                      }, separatorBuilder: (BuildContext context, int index) { return SizedBox(height: height*0.01,); },
-                    ),
+                            );
+                          }, separatorBuilder: (BuildContext context, int index) { return SizedBox(height: height*0.01,); },
+                        ),
+                      ),
+                    ],
                   ),
-                ],
+                ),
+
+
+              ],
+            ),
+          ),
+
+          Align(
+            alignment: Alignment.topRight,
+            child:  Padding(
+              padding:  EdgeInsets.only(top:width*1.18,right: width*0.03),
+              child: FloatingActionButton(
+                onPressed: () {
+                  // Navigator.push(
+                  //     context,
+                  //     MaterialPageRoute(
+                  //       builder: (context) => AddUserPage(),
+                  //     ));
+                },
+                shape: CircleBorder(),
+                backgroundColor: ColorConstant.primaryColor,
+                child: Icon(
+                  Icons.add,
+                  color: ColorConstant.backgroundColor,
+                ),
               ),
             ),
-          ],
-        ),
+          ),
+
+        ],
       ),
     );
   }
