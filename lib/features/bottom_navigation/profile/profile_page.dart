@@ -1,3 +1,4 @@
+import 'package:eventify001/features/bottom_navigation/profile/settings/setting_page.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/constants/color_constant.dart';
@@ -8,17 +9,17 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<Map<String, String>> highlights = [
-      {"image": "https://via.placeholder.com/150", "title": "Travel"},
-      {"image": "https://via.placeholder.com/150", "title": "Food"},
-      {"image": "https://via.placeholder.com/150", "title": "Friends"},
-      {"image": "https://via.placeholder.com/150", "title": "Work"},
-      {"image": "https://via.placeholder.com/150", "title": "Work"},
-      {"image": "https://via.placeholder.com/150", "title": "Work"},
+      {"image": "https://via.placeholder.com/150","title": "Travel"},
+      {"image": "https://via.placeholder.com/150","title": "Food"},
+      {"image": "https://via.placeholder.com/150","title": "Friends"},
+      {"image": "https://via.placeholder.com/150","title": "Work"},
+      {"image": "https://via.placeholder.com/150","title": "Work"},
+      {"image": "https://via.placeholder.com/150","title": "Work"},
     ];
      height = MediaQuery.of(context).size.height;
      width = MediaQuery.of(context).size.width;
     return DefaultTabController(
-      length: 2,
+      length:2,
       child: Scaffold(
         backgroundColor: Colors.white,
         body: SizedBox(
@@ -51,7 +52,7 @@ class ProfilePage extends StatelessWidget {
                       top: height * 0.08,
                       left: 20,
                       child:
-                          Icon(Icons.arrow_back, color: Colors.white, size: 28),
+                          Icon(Icons.arrow_back,color:Colors.white,size: 28),
                     ),
                     SizedBox(
                       height: height * 0.25,
@@ -59,8 +60,13 @@ class ProfilePage extends StatelessWidget {
                         padding: EdgeInsets.only(right: width * 0.05),
                         child: Align(
                           alignment: Alignment.topRight,
-                          child: Icon(Icons.settings,
-                              color: Colors.white, size: 28),
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => SettingPage(),));
+                            },
+                            child: Icon(Icons.settings,
+                                color: Colors.white, size: 28),
+                          ),
                         ),
                       ),
                     ),
@@ -198,7 +204,6 @@ class ProfilePage extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: width * 0.03),
-
               ],
             ),
           ),
@@ -207,7 +212,6 @@ class ProfilePage extends StatelessWidget {
     );
   }
 }
-
 class BottomInsideCurveClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {

@@ -13,16 +13,18 @@ class UsersProfilePage extends StatefulWidget {
 }
 
 class _UsersProfilePageState extends State<UsersProfilePage> {
+  bool follow=true;
+  List<Map<String, String>> highlights = [
+    {"image": "https://via.placeholder.com/150", "title": "Travel"},
+    {"image": "https://via.placeholder.com/150", "title": "Food"},
+    {"image": "https://via.placeholder.com/150", "title": "Friends"},
+    {"image": "https://via.placeholder.com/150", "title": "Work"},
+    {"image": "https://via.placeholder.com/150", "title": "Work"},
+    {"image": "https://via.placeholder.com/150", "title": "Work"},
+  ];
   @override
   Widget build(BuildContext context) {
-    List<Map<String, String>> highlights = [
-      {"image": "https://via.placeholder.com/150", "title": "Travel"},
-      {"image": "https://via.placeholder.com/150", "title": "Food"},
-      {"image": "https://via.placeholder.com/150", "title": "Friends"},
-      {"image": "https://via.placeholder.com/150", "title": "Work"},
-      {"image": "https://via.placeholder.com/150", "title": "Work"},
-      {"image": "https://via.placeholder.com/150", "title": "Work"},
-    ];
+
     height = MediaQuery.of(context).size.height;
     width = MediaQuery.of(context).size.width;
     return DefaultTabController(
@@ -101,21 +103,26 @@ class _UsersProfilePageState extends State<UsersProfilePage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        follow=!follow;
+                        setState(() {
+
+                        });
+                      },
                       child: Container(
                         height: height * 0.04,
                         width: width * 0.45,
                         decoration: BoxDecoration(
-                          border: Border.all(color: ColorConstant.primaryColor),
+                          border:follow? null:Border.all(color: ColorConstant.primaryColor),
                           borderRadius: BorderRadius.circular(width * 0.03),
-                          color: ColorConstant.backgroundColor,
+                          color:follow? ColorConstant.primaryColor:ColorConstant.backgroundColor,
                         ),
                         child: Center(
                           child: Text(
-                            "Edit profile",
+                           follow? "Follow":"Following",
                             style: TextStyle(
                               fontWeight: FontWeight.w700,
-                              color: ColorConstant.thirdColor,
+                              color: follow?ColorConstant.backgroundColor:ColorConstant.thirdColor,
                             ),
                           ),
                         ),
@@ -123,7 +130,9 @@ class _UsersProfilePageState extends State<UsersProfilePage> {
                     ),
                     SizedBox(width: width * 0.03),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+
+                      },
                       child: Container(
                         height: height * 0.04,
                         width: width * 0.45,
@@ -132,7 +141,7 @@ class _UsersProfilePageState extends State<UsersProfilePage> {
                             border:
                             Border.all(color: ColorConstant.primaryColor)),
                         child: Center(
-                          child: Text("Share profile",
+                          child: Text("Message",
                               style: TextStyle(
                                   fontWeight: FontWeight.w700,
                                   color: ColorConstant.thirdColor)),
@@ -206,7 +215,6 @@ class _UsersProfilePageState extends State<UsersProfilePage> {
                   ),
                 ),
                 SizedBox(height: width * 0.03),
-
               ],
             ),
           ),
